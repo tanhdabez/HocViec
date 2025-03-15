@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Panel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    @* <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true"> *@
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="SanPham" asp-action="Index">Admin Panel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNavbar" aria-controls="sidebarNavbar"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <div class="navbar-collapse collapse d-md-block" id="sidebarNavbar">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="SanPham" asp-action="Index"><i class="bi bi-box-seam me-2"></i> Sản phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="DanhMucLoaiHang" asp-action="Index"><i class="bi bi-list-ul me-2"></i> Danh Mục Mặt hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="NhaCungCap" asp-action="Index"><i class="bi bi-truck me-2"></i> Nhà Cung Cấp</a>
+                            </li>
+                          @*   <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="KhachHang" asp-action="Index"><i class="bi bi-people me-2"></i> Khách Hàng</a>
+                            </li> *@
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index"><i class="bi bi-person-fill me-2"></i> User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+<style>
+    /* Sidebar Styles */
+    #sidebar {
+        height: 100vh;
+        border-right: 1px solid #dee2e6;
+        padding-top: 56px; /* Adjust padding to match header height */
+    }
+
+        #sidebar .nav-link {
+            padding: 1rem;
+            font-weight: 500;
+        }
+
+            #sidebar .nav-link.active {
+                background-color: #e9ecef;
+                border-radius: 5px;
+            }
+
+    /* Main Content Styles */
+    main {
+        padding-top: 56px; /* Adjust padding to match header height */
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+</style>

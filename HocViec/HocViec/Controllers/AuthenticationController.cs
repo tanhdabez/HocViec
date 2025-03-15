@@ -1,0 +1,91 @@
+﻿using Azure.Core;
+using Core.Request;
+using Core.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+
+namespace HocViec.Controllers
+{
+    public class AuthenticationController : Controller
+    {
+        private readonly IAuthenticationService _authenticationService;
+
+        public AuthenticationController(IAuthenticationService authenticationService)
+        {
+            _authenticationService = authenticationService;
+        }
+        [HttpGet("Login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login(LoginRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(request);
+            }
+
+            var result = await _authenticationService.Login(request.Email, request.Password);
+
+            if (result.IsSuccess)
+            {
+                HttpContext.Session.SetString("Name", result.Name);
+                HttpContext.Session.SetString("Email", result.Email);
+                HttpContext.Session.SetString("Role", result.Role);
+
+                if (result.Role == "Admin")
+                {
+                    return RedirectToAction("Index", "SanPham");
+                }
+                else if (result.Role == "Employee")
+                {
+                    return RedirectToAction("Index", "SanPham");
+                }
+                else if (result.Role == "Customer")
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return BadRequest("Vai trò không xác định");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Đăng nhập thất bại");
+                return View(request);
+            }
+        }
+        [HttpGet("Register")]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register(RegisterRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(request);
+            }
+
+            var result = await _authenticationService.Register(request.Ten, request.Email, request.Password);
+
+            if (!result)
+            {
+                ModelState.AddModelError("Email", "Email đã tồn tại.");
+                return View(request);
+            }
+
+            // Tự động đăng nhập
+            return await Login(new LoginRequest { Email = request.Email, Password = request.Password });
+        }
+        [HttpGet("Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+    }
+}

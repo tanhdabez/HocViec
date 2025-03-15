@@ -1,0 +1,48 @@
+﻿@model Core.Request.UserResponse
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Chi tiết Nhân viên</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Tên</dt>
+                        <dd class="col-sm-8">@Model.Ten</dd>
+
+                        <dt class="col-sm-4">Email</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4">Số điện thoại</dt>
+                        <dd class="col-sm-8">@Model.SDT</dd>
+
+                        <dt class="col-sm-4">Địa chỉ</dt>
+                        <dd class="col-sm-8">@Model.DiaChi</dd>
+
+                        <dt class="col-sm-4">Vai trò</dt>
+                        @* <dd class="col-sm-8">@(Model.VaiTro?.Ten ?? "Không có")</dd> *@
+
+                        <dt class="col-sm-4">Trạng thái</dt>
+                        <dd class="col-sm-8">@(Model.TrangThai ? "Hoạt động" : "Không hoạt động")</dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">
+                       Sửa
+                    </a>
+                    <a asp-action="Index" class="btn btn-secondary">
+                       Quay lại danh sách
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">

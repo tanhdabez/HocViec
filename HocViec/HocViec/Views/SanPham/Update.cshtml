@@ -1,0 +1,204 @@
+﻿@model Core.Request.SanPhamResponse
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Cập nhật Sản phẩm</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Update" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="MaSanPham" class="form-label">Mã Sản phẩm</label>
+                            <input asp-for="MaSanPham" class="form-control" readonly />
+                            <span asp-validation-for="MaSanPham" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Ten" class="form-label">Tên Sản phẩm</label>
+                            <input asp-for="Ten" class="form-control" />
+                            <span asp-validation-for="Ten" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Mota" class="form-label">Mô tả</label>
+                            <textarea asp-for="Mota" class="form-control"></textarea>
+                            <span asp-validation-for="Mota" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="SoLuong" class="form-label">Số lượng</label>
+                            <input asp-for="SoLuong" class="form-control" type="number" />
+                            <span asp-validation-for="SoLuong" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="GiaBan" class="form-label">Giá bán</label>
+                            <input asp-for="GiaBan" class="form-control" type="number" />
+                            <span asp-validation-for="GiaBan" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trạng thái</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" asp-for="TrangThai" id="trangThaiSwitch">
+                                <label class="form-check-label" for="trangThaiSwitch">
+                                    @(Model.TrangThai ? "Hoạt động" : "Không hoạt động")
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="IdNhaCungCap" class="form-label">Nhà Cung Cấp</label>
+                            <select asp-for="IdNhaCungCap" class="form-control">
+                                @if (ViewBag.NhaCungCaps != null)
+                                {
+                                    @foreach (var nhaCungCap in ViewBag.NhaCungCaps)
+                                    {
+                                        <option value="@nhaCungCap.Id">@nhaCungCap.Ten</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">Không có nhà cung cấp</option>
+                                }
+                            </select>
+                            <span asp-validation-for="IdNhaCungCap" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="IdDanhMucSanPham" class="form-label">Danh mục sản phẩm</label>
+                            <select asp-for="IdDanhMucSanPham" class="form-control">
+                                @if (ViewBag.DanhMucLoaiHangs != null)
+                                {
+                                    @foreach (var nhaCungCap in ViewBag.DanhMucLoaiHangs)
+                                    {
+                                        <option value="@nhaCungCap.Id">@nhaCungCap.Ten</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">Không có loại sản phẩm</option>
+                                }
+                            </select>
+                            <span asp-validation-for="IdDanhMucSanPham" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ảnh sản phẩm</label>
+                            <input type="file" name="Images" class="form-control" multiple id="imageInput" />
+                            <div id="imagePreview" class="mt-2"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ảnh hiện có</label>
+                            <div class="row">
+                                @if (Model.AnhSanPhams != null && Model.AnhSanPhams.Any())
+                                {
+                                    @foreach (var anh in Model.AnhSanPhams)
+                                    {
+                                        <div class="col-md-3 mb-2 image-container" data-image-id="@anh.Id" data-sanpham-id="@Model.Id">
+                                            <img src="@anh.ImageUrl" class="img-fluid" />
+                                            <button type="button" class="btn btn-danger btn-sm mt-1 remove-image-btn">Xóa</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">
+                               Lưu
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                               Quay lại danh sách
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.getElementById('trangThaiSwitch').addEventListener('change', function () {
+            this.nextElementSibling.textContent = this.checked ? 'Hoạt động' : 'Không hoạt động';
+        });
+        document.querySelectorAll('.remove-image-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const imageContainer = this.closest('.image-container');
+                const imageId = imageContainer.dataset.imageId;
+                const sanPhamId = imageContainer.dataset.sanphamId;
+
+                fetch(`/SanPham/DeleteAnhSanPham?imageId=${imageId}&sanPhamId=${sanPhamId}`, {
+                    method: 'POST'
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            imageContainer.remove();
+                        } else {
+                            alert('Đã xảy ra lỗi khi xóa ảnh.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Lỗi:', error);
+                        alert('Đã xảy ra lỗi khi xóa ảnh.');
+                    });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            let selectedFiles = []; // Mảng để lưu trữ các file đã chọn
+
+            document.getElementById('imageInput').addEventListener('change', function () {
+                selectedFiles = Array.from(this.files); // Lưu trữ các file đã chọn vào mảng
+                const preview = document.getElementById('imagePreview');
+                preview.innerHTML = ''; // Xóa ảnh xem trước cũ
+
+                selectedFiles.forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.style.display = 'inline-block';
+
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.style.maxWidth = '100px';
+                        img.style.marginRight = '5px';
+
+                        const removeButton = document.createElement('button');
+                        removeButton.textContent = 'Xóa';
+                        removeButton.className = 'btn btn-danger btn-sm';
+                        removeButton.style.marginLeft = '5px';
+
+                        removeButton.addEventListener('click', function () {
+                            const index = selectedFiles.indexOf(file);
+                            if (index !== -1) {
+                                selectedFiles.splice(index, 1); // Xóa file khỏi mảng
+                                preview.removeChild(imgContainer); // Xóa ảnh xem trước
+                            }
+                        });
+
+                        imgContainer.appendChild(img);
+                        imgContainer.appendChild(removeButton);
+                        preview.appendChild(imgContainer);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            // Trước khi submit form, gán lại mảng cho this.files
+            document.querySelector('form').addEventListener('submit', function (event) {
+                const dataTransfer = new DataTransfer();
+                selectedFiles.forEach(file => {
+                    dataTransfer.items.add(file);
+                });
+                document.getElementById('imageInput').files = dataTransfer.files;
+            });
+        });
+    </script>
+}

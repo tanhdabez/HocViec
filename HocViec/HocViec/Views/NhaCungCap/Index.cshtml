@@ -1,0 +1,65 @@
+﻿@model List<Core.Request.NhaCungCapResponse>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold text-primary">Danh Sách Nhà Cung Cấp</h3>
+        <a asp-action="Create" class="btn btn-success">
+             Thêm mới
+        </a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-body">
+            <table class="table table-hover table-bordered align-middle">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>Tên</th>
+                        <th>Mô tả</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@Html.DisplayFor(modelItem => item.Ten)</td>
+                            <td class="text-center">
+                                <div class="text-truncate" style="max-width: 300px;" title="@item.Mota">
+                                    @Html.DisplayFor(modelItem => item.Mota)
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                @if (item.TrangThai)
+                                {
+                                    <span class="text-success "><strong>Hợp tác</strong></span>
+                                }
+                                else
+                                {
+                                    <span class="text-danger"><strong>Dừng hợp tác</strong></span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">
+                                  Cập Nhập
+                                </a>
+                                <a asp-action="GetById" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                     Xem
+                                </a>
+                                <a asp-action="UpdateStatus" asp-route-id="@item.Id" class="btn @(item.TrangThai ? "btn-danger" : "btn-success") btn-sm">
+                                    @(item.TrangThai ? "Vô hiệu hóa" : "Kích hoạt")
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

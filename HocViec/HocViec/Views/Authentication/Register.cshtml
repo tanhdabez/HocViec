@@ -1,0 +1,64 @@
+﻿@model Core.Request.RegisterRequest
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card register-card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Đăng Ký</h2>
+
+                    <form asp-action="Register" asp-controller="Authentication" method="post">
+                        <div class="form-group">
+                            <label asp-for="Ten"></label>
+                            <input asp-for="Ten" class="form-control" />
+                            <span asp-validation-for="Ten" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
+                        <div asp-validation-summary="ModelOnly" class="text-danger mt-3"></div>
+
+                        <p class="text-center mt-3">Đã có tài khoản? <a asp-action="Login" asp-controller="Authentication">Đăng nhập</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .register-card {
+        margin-top: 50px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .register-card .card-title {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .register-card .form-group {
+            margin-bottom: 20px;
+        }
+
+        .register-card .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .register-card .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+</style>

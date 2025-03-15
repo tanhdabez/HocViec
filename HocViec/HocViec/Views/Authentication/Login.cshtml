@@ -1,0 +1,58 @@
+﻿@model Core.Request.LoginRequest
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card login-card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Đăng Nhập</h2>
+
+                    <form asp-action="Login" method="post">
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                        <div asp-validation-summary="ModelOnly" class="text-danger mt-3"></div>
+
+                        <p class="text-center mt-3">Chưa có tài khoản? <a asp-action="Register" asp-controller="Authentication">Đăng ký ngay</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .login-card {
+        margin-top: 50px; /* Điều chỉnh khoảng cách từ đỉnh trang */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-card .card-title {
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .login-card .form-group {
+        margin-bottom: 20px;
+    }
+
+    .login-card .btn-primary {
+        background-color: #007bff; /* Màu xanh dương Bootstrap */
+        border-color: #007bff;
+    }
+
+    .login-card .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
