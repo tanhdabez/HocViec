@@ -163,18 +163,6 @@ namespace Infrastructure.Repositories
             return await _dbSet.OrderBy(x => x.CreatedDate).ToListAsync();
         }
 
-        public async Task<List<TEntity>> GetAllWithIncludesAsync(params string[] includes)
-        {
-            IQueryable<TEntity> query = _dbSet;
-
-            foreach (var include in includes)
-            {
-                query = query.Include(include);
-            }
-
-            return await query.OrderBy(x => x.CreatedDate).ToListAsync();
-        }
-
         public async Task<List<TEntity>> GetAllWithIncludesAndStatusAsync(params string[] includes)
         {
             IQueryable<TEntity> query = _dbSet;

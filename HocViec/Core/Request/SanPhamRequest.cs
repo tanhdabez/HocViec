@@ -12,9 +12,7 @@ namespace Core.Request
         public int SoLuong { get; set; }
         public int GiaBan { get; set; }
         public bool TrangThai { get; set; }
-        [ForeignKey("NhaCungCap")]
         public Guid IdNhaCungCap { get; set; }
-        [ForeignKey("DanhMucLoaiHang")]
         public Guid IdDanhMucSanPham { get; set; }
         public List<IFormFile>? Images { get; set; }
         public DateTime UpdateDate { get; set; }
@@ -28,13 +26,12 @@ namespace Core.Request
         public int SoLuong { get; set; }
         public int GiaBan { get; set; }
         public bool TrangThai { get; set; }
-        [ForeignKey("NhaCungCap")]
         public Guid IdNhaCungCap { get; set; }
-        public string? TenNhaCungCap { get; set; }
-        [ForeignKey("DanhMucLoaiHang")]
         public Guid IdDanhMucSanPham { get; set; }
+        public string? TenNhaCungCap { get; set; }
         public string? TenDanhMucSanPham { get; set; }
-        public string? ImageUrl { get; set; }
+        public List<string>? AnhSanPhams { get; set; }
+        public List<IFormFile>? Images { get; set; }
         public DateTime UpdateDate { get; set; }
     }
 }

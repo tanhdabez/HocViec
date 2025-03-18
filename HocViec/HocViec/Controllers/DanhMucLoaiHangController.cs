@@ -1,9 +1,11 @@
 ﻿using Core.Request;
 using Core.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HocViec.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DanhMucLoaiHangController : Controller
     {
         private readonly ILogger<DanhMucLoaiHangController> _logger;

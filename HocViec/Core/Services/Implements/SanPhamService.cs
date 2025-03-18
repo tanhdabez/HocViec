@@ -23,30 +23,23 @@ namespace Core.Services.Implements
             _sanPhamRepo = sanPhamRepo;
             _anhSanPhamRepo = anhSanPhamRepo;
         }
-        public async Task<List<SanPham>> GetAllSanPham()
+        public async Task<List<SanPhamResponse>> GetAllSanPham()
         {
-            return await _sanPhamRepo.GetAllWithIncludesAsync("NhaCungCap", "DanhMucLoaiHang", "AnhSanPhams");
+            var sanPhams = await _dbContext.SanPhams.Include(sp => sp.NhaCungCap).Include(sp => sp.DanhMucLoaiHang).Include(sp => sp.AnhSanPhams).ToListAsync();
+
+            return _mapper.Map<List<SanPhamResponse>>(sanPhams);
         }
-        public async Task<List<SanPham>> GetAllWithIncludesAndStatusAsync()
+        public async Task<SanPhamResponse> GetSanPhamById(Guid id)
         {
-            return await _sanPhamRepo.GetAllWithIncludesAndStatusAsync("NhaCungCap", "DanhMucLoaiHang", "AnhSanPhams");
-        }
-        public async Task<SanPham> GetSanPhamById(Guid id)
-        {
-            var sanPham = await _dbContext.SanPhams.FirstOrDefaultAsync(x => x.Id == id);
+            var sanPham = await _dbContext.SanPhams.Include(sp => sp.NhaCungCap).Include(sp => sp.DanhMucLoaiHang).Include(sp => sp.AnhSanPhams).FirstOrDefaultAsync(sp => sp.Id == id);
+
             if (sanPham == null)
             {
                 throw new Exception("Không tìm thấy sản phẩm");
             }
-            var anhSanPham = await _dbContext.AnhSanPhams.Where(x => x.IdSanPham == id).ToListAsync();
-            var nhaCungCapSanPham = await _dbContext.NhaCungCaps.FirstOrDefaultAsync(x => x.Id == sanPham.IdNhaCungCap);
-            var danhMucSanPham = await _dbContext.DanhMucLoaiHangs.FirstOrDefaultAsync(x => x.Id == sanPham.IdDanhMucSanPham);
-            sanPham.AnhSanPhams = anhSanPham;
-            sanPham.NhaCungCap = nhaCungCapSanPham;
-            sanPham.DanhMucLoaiHang = danhMucSanPham;
-            return sanPham;
-        }
 
+            return _mapper.Map<SanPhamResponse>(sanPham);
+        }
         private async Task<string> SaveImage(IFormFile image)
         {
             var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
@@ -79,16 +72,7 @@ namespace Core.Services.Implements
             return true;
         }
 
-        private void DeleteImageFile(string imageUrl)
-        {
-            var filePath = Path.Combine("wwwroot", imageUrl.TrimStart('/'));
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
-        }
-
-        public async Task<SanPham?> UpdateSanPham(SanPhamResponse request)
+        public async Task<SanPhamResponse?> UpdateSanPham(SanPhamResponse request)
         {
             var sanPham = await _dbContext.SanPhams.Include(x => x.AnhSanPhams).FirstOrDefaultAsync(x => x.Id == request.Id);
             if (sanPham == null)
@@ -108,36 +92,19 @@ namespace Core.Services.Implements
                     await _anhSanPhamRepo.AddAsync(anhSanPham);
                 }
             }
-            var updatesanPham = _mapper.Map(request, sanPham);
-            await _sanPhamRepo.UpdateAsync(updatesanPham);
-            return sanPham;
+            _mapper.Map(request, sanPham); // Ánh xạ dữ liệu từ request sang sanPham
+            await _sanPhamRepo.UpdateAsync(sanPham); // Cập nhật sản phẩm trong database
+
+            // Trả về thông tin sản phẩm đã cập nhật dưới dạng SanPhamResponse
+            return _mapper.Map<SanPhamResponse>(sanPham);
         }
 
-        public async Task<bool> DeleteAnhSanPham(Guid imageId, Guid sanPhamId)
+        private void DeleteImageFile(string imageUrl)
         {
-            try
+            var filePath = Path.Combine("wwwroot", imageUrl.TrimStart('/'));
+            if (File.Exists(filePath))
             {
-                var sanPham = await _dbContext.SanPhams
-                    .Include(s => s.AnhSanPhams)
-                    .FirstOrDefaultAsync(x => x.Id == sanPhamId);
-                if (sanPham == null)
-                {
-                    return false;
-                }
-
-                var anhSanPhamToDelete = sanPham.AnhSanPhams.FirstOrDefault(x => x.Id == imageId);
-                if (anhSanPhamToDelete != null)
-                {
-                    DeleteImageFile(anhSanPhamToDelete.ImageUrl);
-                    _dbContext.AnhSanPhams.Remove(anhSanPhamToDelete);
-                    await _dbContext.SaveChangesAsync();
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
+                File.Delete(filePath);
             }
         }
 
@@ -146,10 +113,36 @@ namespace Core.Services.Implements
             await _sanPhamRepo.DeleteAsync(id);
             return true;
         }
+
         public async Task<bool> UpdateStatus(Guid id)
         {
             await _sanPhamRepo.UpdateStatusAsync(id);
             return true;
+        }
+
+        public async Task<bool> DeleteImageAsync(string imageUrl)
+        {
+            try
+            {
+                // Xoá file ảnh từ thư mục
+                DeleteImageFile(imageUrl);
+
+                // Xoá ảnh từ database (nếu cần)
+                var image = await _dbContext.AnhSanPhams.FirstOrDefaultAsync(x => x.ImageUrl == imageUrl);
+                if (image != null)
+                {
+                    _dbContext.AnhSanPhams.Remove(image);
+                    await _dbContext.SaveChangesAsync();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                Console.WriteLine($"Lỗi khi xoá ảnh: {ex.Message}");
+                return false;
+            }
         }
     }
 }

@@ -22,12 +22,12 @@ namespace HocViec.Controllers
                 // Người dùng đã đăng nhập
                 ViewBag.Name = HttpContext.Session.GetString("Name");
                 ViewBag.Role = HttpContext.Session.GetString("Role");
-                var sanPhams = await _sanPhamService.GetAllWithIncludesAndStatusAsync();
+                var sanPhams = await _sanPhamService.GetAllSanPham();
                 return View(sanPhams);
             }
             else
             {
-                var sanPhams = await _sanPhamService.GetAllWithIncludesAndStatusAsync();
+                var sanPhams = await _sanPhamService.GetAllSanPham();
                 return View(sanPhams);
             }
         }

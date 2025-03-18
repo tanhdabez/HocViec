@@ -4,11 +4,6 @@ using Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Services.Implements
 {
@@ -32,7 +27,7 @@ namespace Core.Services.Implements
             var cartItems = JsonConvert.DeserializeObject<List<CartItemRequest>>(cartCookie);
             if (cartItems == null || cartItems.Count == 0)
             {
-                return new List<CartItemRequest>(); 
+                return new List<CartItemRequest>();
             }
             var productIds = cartItems.Select(item => item.ProductId).ToList();
             var products = _dbContext.SanPhams
@@ -51,7 +46,8 @@ namespace Core.Services.Implements
                     item.ProductName = product.Ten;
                     item.ProductCode = product.MaSanPham;
                     item.Price = product.GiaBan;
-                    item.ImageUrl = product.AnhSanPhams.FirstOrDefault()?.ImageUrl; // Lấy ảnh đầu tiên (nếu có)
+                    item.ImageUrl = product.AnhSanPhams?.FirstOrDefault()?.ImageUrl;
+                    item.StockQuantity = product.SoLuong;
                 }
             }
             return cartItems;
@@ -62,19 +58,40 @@ namespace Core.Services.Implements
             return cart.Count();
         }
 
-        public void AddToCart(Guid productId, int quantity)
+        public async Task<CartResult> AddToCart(Guid productId, int quantity)
         {
             var cart = GetCart();
             var existingItem = cart.FirstOrDefault(item => item.ProductId == productId);
+            var productInStock = await _dbContext.SanPhams.Where(x => x.Id == productId).Select(x => x.SoLuong).FirstOrDefaultAsync();
+            // Kiểm tra số lượng sản phẩm trong kho
+            if (productInStock <= 0)
+            {
+                return new CartResult { Success = false, Message = "Sản phẩm đã hết hàng." };
+            }
             if (existingItem != null)
             {
-                existingItem.Quantity += quantity;
+                int totalQuantity = existingItem.Quantity + quantity;
+                if (totalQuantity > productInStock)
+                {
+                    return new CartResult { Success = false, Message = $"Bạn đã có {existingItem.Quantity} sản phẩm trong giỏ hàng. Không thể thêm số lượng đã chọn vào giỏ hàng vì sẽ vượt quá giới hạn mua hàng của bạn." };
+                }
+                // Cập nhật số lượng sản phẩm trong giỏ hàng
+                existingItem.Quantity = totalQuantity;
             }
             else
             {
+                // Kiểm tra xem số lượng thêm vào có vượt quá số lượng trong kho không
+                if (quantity > productInStock)
+                {
+                    return new CartResult { Success = false, Message = $"Số lượng sản phẩm trong kho không đủ. Số lượng hiện còn: {productInStock}" };
+                }
+
+                // Thêm sản phẩm mới vào giỏ hàng
                 cart.Add(new CartItemRequest { ProductId = productId, Quantity = quantity });
             }
             SaveCart(cart);
+            return new CartResult { Success = true, Message = "Thêm sản phẩm vào giỏ hàng thành công." };
+
         }
         public void UpdateCartItem(Guid productId, int quantity)
         {

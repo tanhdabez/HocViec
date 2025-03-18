@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Infrastructure.Models.DanhMuc.SanPham>
+﻿@model List<Core.Request.SanPhamResponse>
 
 @{
     ViewData["Title"] = "Trang chủ";
@@ -13,10 +13,12 @@
                     <div class="product-image-container">
                         @if (sanPham.AnhSanPhams != null && sanPham.AnhSanPhams.Any())
                         {
-                            var firstAnh = sanPham.AnhSanPhams.FirstOrDefault();
-                            <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id">
-                                <img src="@firstAnh.ImageUrl" alt="@sanPham.Ten" class="card-img-top product-image" />
-                            </a>
+                            var firstImage = sanPham.AnhSanPhams.First(); // Lấy ảnh đầu tiên
+                            <img src="@firstImage" alt="@sanPham.Ten" class="product-image" />
+                        }
+                        else
+                        {
+                            <span>Không có ảnh</span>
                         }
                     </div>
                     <div class="card-body product-details">

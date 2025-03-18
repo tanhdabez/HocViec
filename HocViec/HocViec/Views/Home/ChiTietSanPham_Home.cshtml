@@ -1,4 +1,4 @@
-﻿@model Infrastructure.Models.DanhMuc.SanPham
+﻿@model Core.Request.SanPhamResponse
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,7 +26,7 @@
                                 @foreach (var anh in Model.AnhSanPhams)
                                 {
                                     <div class="carousel-item @(anh == Model.AnhSanPhams.First() ? "active" : "")">
-                                        <img src="@anh.ImageUrl" class="d-block w-100" alt="@Model.Ten" />
+                                        <img src="@anh" class="d-block w-100" alt="@Model.Ten" />
                                     </div>
                                 }
                             </div>
@@ -55,13 +55,16 @@
                         @(Model.TrangThai ? "Còn Hàng" : "Hết Hàng")
                     </span>
                 </p>
-                <p><strong>Nhà cung cấp:</strong> @Model.NhaCungCap.Ten</p>
+                <p><strong>Nhà cung cấp:</strong> @Model.TenNhaCungCap</p>
                 <p class="product-price"><strong>Giá:</strong> @Model.GiaBan.ToString("N0") VNĐ</p>
-                <div class="quantity-control">
-                    <button class="btn btn-outline-secondary btn-sm quantity-decrease">-</button>
-                    <input type="number" id="productQuantity" value="1" min="1" class="form-control form-control-sm mx-2" style="width: 60px;">
-                    <button class="btn btn-outline-secondary btn-sm quantity-increase">+</button>
-                    <p class="ms-2"><strong>@Model.SoLuong</strong> Sản phẩm có sẵn</p>
+                <div id="productDetails" data-max-quantity="@Model.SoLuong">
+                    <!-- Các phần tử khác -->
+                    <div class="quantity-control">
+                        <button class="btn btn-outline-secondary btn-sm quantity-decrease">-</button>
+                        <input type="number" id="productQuantity" value="1" min="1" class="form-control form-control-sm mx-2" style="width: 60px;">
+                        <button class="btn btn-outline-secondary btn-sm quantity-increase">+</button>
+                        <p class="ms-2"><strong>@Model.SoLuong</strong> Sản phẩm có sẵn</p>
+                    </div>
                 </div>
                 <div>
                     <button class="btn btn-add-to-cart mt-3" id="addToCartButton" data-product-id="@Model.Id"><strong>Thêm vào giỏ hàng</strong></button>
@@ -76,6 +79,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    @* <script src="~/js/Cart.js" asp-append-version="true"></script> *@
+    <script src="~/js/client-product-detail.js" asp-append-version="true"></script>
 </body>
 </html>

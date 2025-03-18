@@ -32,11 +32,15 @@ namespace Core.Mapper
 
             //sanPham_Mapper
             CreateMap<AddSanPhamRequest, SanPham>();
-            CreateMap<SanPhamResponse, SanPham>();
+            CreateMap<SanPhamResponse, SanPham>()
+            .ForMember(dest => dest.AnhSanPhams, opt => opt.Ignore());
             CreateMap<SanPham, SanPhamResponse>()
-            .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.TrangThai))
-           .ForMember(dest => dest.UpdateDate, opt => opt.MapFrom(src => src.UpdatedDate));
-
+             .ForMember(dest => dest.TenNhaCungCap, opt => opt.MapFrom(src => src.NhaCungCap.Ten))
+             .ForMember(dest => dest.TenDanhMucSanPham, opt => opt.MapFrom(src => src.DanhMucLoaiHang.Ten))
+             .ForMember(dest => dest.AnhSanPhams, opt => opt.MapFrom(src => src.AnhSanPhams.Select(anh => anh.ImageUrl).ToList()))
+             .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.TrangThai))
+             .ForMember(dest => dest.UpdateDate, opt => opt.MapFrom(src => src.UpdatedDate))
+            .ForMember(dest => dest.Images, opt => opt.Ignore());
 
         }
     }

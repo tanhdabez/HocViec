@@ -2,11 +2,13 @@
 using Core.Services.Implements;
 using Core.Services.Interfaces;
 using Infrastructure.Models.Enum;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HocViec.Controllers
 {
+    [Authorize(Roles = "Admin, Employee")]
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;

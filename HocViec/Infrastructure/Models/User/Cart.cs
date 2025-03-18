@@ -12,9 +12,6 @@ namespace Infrastructure.Models.User
     {
         [ForeignKey("KhachHang")]
         public Guid IdKhachHang { get; set; }
-        [ForeignKey("SanPham")]
-        public Guid IdSanPham { get; set; }
-        public int SoLuong { get; set; }
         public virtual User? User { get; set; }
         public virtual ICollection<CartItem>? CartItems { get; set; }
 

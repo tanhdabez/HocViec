@@ -45,12 +45,12 @@
       "PackagePath": "staticwebassets\\images\\74faf697-1b85-454d-af99-1ee8e904bf7b.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\bb613c85-9674-451d-ac94-90cdb92dd1b8.png",
-      "PackagePath": "staticwebassets\\images\\bb613c85-9674-451d-ac94-90cdb92dd1b8.png"
-    },
-    {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\d00f01a0-1ebc-42c7-9880-7d1283b04b77.png",
       "PackagePath": "staticwebassets\\images\\d00f01a0-1ebc-42c7-9880-7d1283b04b77.png"
+    },
+    {
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\dc76c9c1-63f8-4699-b7d0-516f44177ef1.png",
+      "PackagePath": "staticwebassets\\images\\dc76c9c1-63f8-4699-b7d0-516f44177ef1.png"
     },
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\e7758e19-8a2a-4c78-92c5-1c029460c8d2.png",
@@ -67,6 +67,10 @@
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",
       "PackagePath": "staticwebassets\\js\\Product.js"
+    },
+    {
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\client-product-detail.js",
+      "PackagePath": "staticwebassets\\js\\client-product-detail.js"
     },
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\site.js",

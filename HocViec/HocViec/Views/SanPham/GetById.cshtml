@@ -1,86 +1,100 @@
 ﻿@model Core.Request.SanPhamResponse
 
 @{
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    Layout = null;
 }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chi tiết Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Khoảng cách giữa các ảnh */
+        }
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Chi tiết Sản phẩm</h4>
-                </div>
-                <div class="card-body">
-                    <dl class="row">
-                        <dt class="col-sm-4">Tên</dt>
-                        <dd class="col-sm-8">@Model.Ten</dd>
+        .grid-item {
+            width: 150px; /* Kích thước ảnh */
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Chi tiết Sản phẩm</h4>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4">ID</dt>
+                            <dd class="col-sm-8">@Model.Id</dd>
 
-                        <dt class="col-sm-4">Mã Sản phẩm</dt>
-                        <dd class="col-sm-8">@Model.MaSanPham</dd>
+                            <dt class="col-sm-4">Tên</dt>
+                            <dd class="col-sm-8">@Model.Ten</dd>
 
-                        <dt class="col-sm-4">Mô tả</dt>
-                        <dd class="col-sm-8">@Model.Mota</dd>
+                            <dt class="col-sm-4">Mã Sản phẩm</dt>
+                            <dd class="col-sm-8">@Model.MaSanPham</dd>
 
-                        <dt class="col-sm-4">Số lượng</dt>
-                        <dd class="col-sm-8">@Model.SoLuong</dd>
+                            <dt class="col-sm-4">Mô tả</dt>
+                            <dd class="col-sm-8">@Model.Mota</dd>
 
-                        <dt class="col-sm-4">Giá bán</dt>
-                        <dd class="col-sm-8">@Model.GiaBan</dd>
+                            <dt class="col-sm-4">Số lượng</dt>
+                            <dd class="col-sm-8">@Model.SoLuong</dd>
 
-                        <dt class="col-sm-4">Trạng thái</dt>
-                        <dd class="col-sm-8">@(Model.TrangThai ? "Hoạt động" : "Không hoạt động")</dd>
+                            <dt class="col-sm-4">Giá bán</dt>
+                            <dd class="col-sm-8">@Model.GiaBan</dd>
 
-                        <dt class="col-sm-4">Nhà cung cấp</dt>
-                        <dd class="col-sm-8">@(Model.TenNhaCungCap ?? "Không có")</dd>
+                            <dt class="col-sm-4">Trạng thái</dt>
+                            <dd class="col-sm-8">@(Model.TrangThai ? "Hoạt động" : "Không hoạt động")</dd>
 
-                        <dt class="col-sm-4">Danh mục sản phẩm</dt>
-                        <dd class="col-sm-8">@(Model.TenDanhMucSanPham ?? "Không có")</dd>
+                            <dt class="col-sm-4">Nhà cung cấp</dt>
+                            <dd class="col-sm-8">@(Model.TenNhaCungCap ?? "Không có")</dd>
 
-                        <dt class="col-sm-4">Ảnh sản phẩm</dt>
-                       @*  <dd class="col-sm-8">
-                            @if (Model.AnhSanPhams != null && Model.AnhSanPhams.Any())
-                            {
-                                <div class="image-grid">
-                                    @foreach (var anh in Model.AnhSanPhams)
-                                    {
-                                        <img src="@anh.ImageUrl" alt="@Model.Ten" class="grid-item" />
-                                    }
-                                </div>
-                            }
-                            else
-                            {
-                                <span>Không có ảnh</span>
-                            }
-                        </dd> *@
-                    </dl>
-                </div>
-                <div class="card-footer text-center">
-                    <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">
-                        Sửa
-                    </a>
-                    <a asp-action="Index" class="btn btn-secondary">
-                        Quay lại danh sách
-                    </a>
+                            <dt class="col-sm-4">Danh mục sản phẩm</dt>
+                            <dd class="col-sm-8">@(Model.TenDanhMucSanPham ?? "Không có")</dd>
+
+                            <dt class="col-sm-4">Ảnh sản phẩm</dt>
+                            <dd class="col-sm-8">
+                                @if (Model.AnhSanPhams != null && Model.AnhSanPhams.Any())
+                                {
+                                    <div class="image-grid">
+                                        @foreach (var imageUrl in Model.AnhSanPhams)
+                                        {
+                                            <img src="@imageUrl" alt="@Model.Ten" class="grid-item" />
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span>Không có ảnh</span>
+                                }
+                            </dd>
+
+                            <dt class="col-sm-4">Ngày cập nhật</dt>
+                            <dd class="col-sm-8">@Model.UpdateDate</dd>
+                        </dl>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">
+                            Sửa
+                        </a>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            Quay lại danh sách
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<style>
-    .image-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* Khoảng cách giữa các ảnh */
-    }
-
-    .grid-item {
-        width: 150px; /* Kích thước ảnh */
-        height: 150px;
-        object-fit: cover;
-        border: 1px solid #ddd;
-    }
-</style>
+</body>
+</html>

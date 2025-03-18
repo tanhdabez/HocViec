@@ -11,16 +11,17 @@ namespace Core.Services.Interfaces
 {
     public interface ISanPhamService
     {
-        Task<List<SanPham>> GetAllSanPham();
-        Task<List<SanPham>> GetAllWithIncludesAndStatusAsync();
-        Task<SanPham> GetSanPhamById(Guid id);
+        Task<List<SanPhamResponse>> GetAllSanPham();
+        Task<SanPhamResponse> GetSanPhamById(Guid id);
 
         Task<bool> AddSanPham(AddSanPhamRequest request);
 
-        Task<SanPham?> UpdateSanPham(SanPhamResponse request);
+        Task<SanPhamResponse?> UpdateSanPham(SanPhamResponse request);
 
         Task<bool> DeleteSanPham(Guid id);
+
         Task<bool> UpdateStatus(Guid id);
-        Task<bool> DeleteAnhSanPham(Guid imageId, Guid sanPhamId);
+
+        Task<bool> DeleteImageAsync(string imageUrl);
     }
 }

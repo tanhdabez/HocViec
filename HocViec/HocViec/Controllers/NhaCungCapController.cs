@@ -3,10 +3,12 @@ using Core.Request;
 using Core.Services.Implements;
 using Core.Services.Interfaces;
 using Infrastructure.Models.DanhMuc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HocViec.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class NhaCungCapController : Controller
     {
         private readonly ILogger<NhaCungCapController> _logger;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CQxZ6Nb1UAdOnZgiSre3g+OYgjyyf8f3JIGlYWBvbtM=",
+  "Hash": "zwNdASM17IWXX30qAvQcXZvU9Rtw6HkcgIXl5YpQA6E=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
@@ -245,25 +245,6 @@
       "OriginalItemSpec": "wwwroot\\images\\74faf697-1b85-454d-af99-1ee8e904bf7b.png"
     },
     {
-      "Identity": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\bb613c85-9674-451d-ac94-90cdb92dd1b8.png",
-      "SourceId": "App",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\",
-      "BasePath": "_content/App",
-      "RelativePath": "images/bb613c85-9674-451d-ac94-90cdb92dd1b8.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\bb613c85-9674-451d-ac94-90cdb92dd1b8.png"
-    },
-    {
       "Identity": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\d00f01a0-1ebc-42c7-9880-7d1283b04b77.png",
       "SourceId": "App",
       "SourceType": "Discovered",
@@ -281,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\d00f01a0-1ebc-42c7-9880-7d1283b04b77.png"
+    },
+    {
+      "Identity": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\dc76c9c1-63f8-4699-b7d0-516f44177ef1.png",
+      "SourceId": "App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\",
+      "BasePath": "_content/App",
+      "RelativePath": "images/dc76c9c1-63f8-4699-b7d0-516f44177ef1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dc76c9c1-63f8-4699-b7d0-516f44177ef1.png"
     },
     {
       "Identity": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\e7758e19-8a2a-4c78-92c5-1c029460c8d2.png",
@@ -338,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Cart.js"
+    },
+    {
+      "Identity": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\client-product-detail.js",
+      "SourceId": "App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\",
+      "BasePath": "_content/App",
+      "RelativePath": "js/client-product-detail.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\client-product-detail.js"
     },
     {
       "Identity": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",

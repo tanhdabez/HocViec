@@ -1,15 +1,16 @@
-﻿using Azure.Core;
-using Core.Request;
+﻿using Core.Request;
 using Core.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HocViec.Controllers
 {
     public class AuthenticationController : Controller
     {
-        private readonly IAuthenticationService _authenticationService;
+        private readonly ICustomAuthenticationService _authenticationService;
 
-        public AuthenticationController(IAuthenticationService authenticationService)
+        public AuthenticationController(ICustomAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
         }
@@ -18,6 +19,7 @@ namespace HocViec.Controllers
         {
             return View();
         }
+
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginRequest request)
         {
@@ -57,11 +59,13 @@ namespace HocViec.Controllers
                 return View(request);
             }
         }
+
         [HttpGet("Register")]
         public IActionResult Register()
         {
             return View();
         }
+
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
@@ -81,9 +85,11 @@ namespace HocViec.Controllers
             // Tự động đăng nhập
             return await Login(new LoginRequest { Email = request.Email, Password = request.Password });
         }
+
         [HttpGet("Logout")]
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }

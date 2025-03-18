@@ -39,7 +39,6 @@ namespace Infrastructure.Repositories
         //Task CommitAsync();
         //Task RollbackAsync();
         Task<List<TEntity>> GetAllAsync();
-        Task<List<TEntity>> GetAllWithIncludesAsync(params string[] includes);
         Task<List<TEntity>> GetAllWithIncludesAndStatusAsync(params string[] includes);
         Task<TEntity> GetByIdAsync(Guid id);
         Task<bool> AddAsync(TEntity entity);

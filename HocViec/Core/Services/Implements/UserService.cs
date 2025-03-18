@@ -41,7 +41,7 @@ namespace Core.Services.Implements
                 return false;
             }
             var newUser = _mapper.Map<User>(request);
-            newUser.Password = Helper.PasswordHelper.HashPassword(request.Password);
+            newUser.Password = PasswordHelper.HashPassword(request.Password);
             await _UserRepo.AddAsync(newUser);
             return true;
         }
