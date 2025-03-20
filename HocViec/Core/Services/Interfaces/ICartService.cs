@@ -1,4 +1,5 @@
 ﻿using Core.Request;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace Core.Services.Interfaces
 {
     public interface ICartService
     {
-        List<CartItemRequest> GetCart();
+        Task<List<CartItemRequest>> GetCart(Guid? userId = null);
         Task<CartResult> AddToCart(Guid productId, int quantity);
-        int GetTotalItems();
-        void UpdateCartItem(Guid productId, int quantity);
-        void RemoveFromCart(Guid productId);
-        void ClearCart();
+        //int GetTotalItems();
+        Task<CartResult> UpdateCartItem(Guid productId, int quantity);
+        Task<CartResult> RemoveFromCart(Guid productId);
+        Task<CartResult> ClearCart();
     }
 }

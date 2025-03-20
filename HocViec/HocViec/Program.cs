@@ -2,11 +2,12 @@
 using System;
 using Core.Constants;
 using Infrastructure;
-using Infrastructure.Repositories;
 using Core.Mapper;
 using Core.Services.Implements;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Infrastructure.Repositories.Interfaces;
+using Infrastructure.Repositories.Implements;
 
 var builder = WebApplication.CreateBuilder(args);
 var appSettingsSection = builder.Configuration.GetSection("Appsettings");
@@ -32,13 +33,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //services
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<DbContext, AppDbContext>();
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 builder.Services.AddScoped<INhaCungCapService, NhaCungCapService>();
+builder.Services.AddScoped<INhaCungCapRepository, NhaCungCapRepository>();
+
 builder.Services.AddScoped<IDanhMucLoaiHangService, DanhMucLoaiHangService>();
+builder.Services.AddScoped<IDanhMucLoaiHangRepository, DanhMucLoaiHangRepository>();
+
 builder.Services.AddScoped<ISanPhamService, SanPhamService>();
+builder.Services.AddScoped<ISanPhamRepository, SanPhamRepository>();
+
 builder.Services.AddScoped<ICustomAuthenticationService, AuthenticationService>();
+
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 //Build

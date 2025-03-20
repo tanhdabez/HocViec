@@ -2,7 +2,11 @@
   "Files": [
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\App.bundle.scp.css",
-      "PackagePath": "staticwebassets\\App.bundle.scp.css"
+      "PackagePath": "staticwebassets\\App.kjl1uudz6h.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
+      "PackagePath": "staticwebassets\\css\\Home.css"
     },
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\site.css",
@@ -13,56 +17,40 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\07c46b0e-85e1-4504-9d17-1e425f485ce5.png",
-      "PackagePath": "staticwebassets\\images\\07c46b0e-85e1-4504-9d17-1e425f485ce5.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\09b019af-7218-4af5-8250-4146f553fec0.png",
+      "PackagePath": "staticwebassets\\images\\09b019af-7218-4af5-8250-4146f553fec0.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\0b9761b9-6dde-41a8-a070-734eaea948a9.png",
-      "PackagePath": "staticwebassets\\images\\0b9761b9-6dde-41a8-a070-734eaea948a9.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\30cf54ee-69e9-4a50-9195-072581e0f12b.png",
+      "PackagePath": "staticwebassets\\images\\30cf54ee-69e9-4a50-9195-072581e0f12b.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\17d31e61-c753-4312-8c89-589e7bbeb828.png",
-      "PackagePath": "staticwebassets\\images\\17d31e61-c753-4312-8c89-589e7bbeb828.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\5d8e0760-59bf-4940-bd3e-e6cd733421a7.png",
+      "PackagePath": "staticwebassets\\images\\5d8e0760-59bf-4940-bd3e-e6cd733421a7.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\52ee3f52-c527-4089-af7e-d7e49227c4dd.png",
-      "PackagePath": "staticwebassets\\images\\52ee3f52-c527-4089-af7e-d7e49227c4dd.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\63a4ef92-a709-44dd-9f46-49072996aa7e.png",
+      "PackagePath": "staticwebassets\\images\\63a4ef92-a709-44dd-9f46-49072996aa7e.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\640d58b0-ee14-4e84-9af8-c63f702f7f24.png",
-      "PackagePath": "staticwebassets\\images\\640d58b0-ee14-4e84-9af8-c63f702f7f24.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\8e301602-9211-4bd0-9761-7cd833d45b01.png",
+      "PackagePath": "staticwebassets\\images\\8e301602-9211-4bd0-9761-7cd833d45b01.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\680b5b0f-03ec-486a-a0c5-9b1974c79fe2.png",
-      "PackagePath": "staticwebassets\\images\\680b5b0f-03ec-486a-a0c5-9b1974c79fe2.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\d1637d1e-fbda-4ca7-a90e-393f03c3cbbf.png",
+      "PackagePath": "staticwebassets\\images\\d1637d1e-fbda-4ca7-a90e-393f03c3cbbf.png"
     },
     {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\6a022616-63c1-4095-be38-8c1e4709fd84.png",
-      "PackagePath": "staticwebassets\\images\\6a022616-63c1-4095-be38-8c1e4709fd84.png"
-    },
-    {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\74faf697-1b85-454d-af99-1ee8e904bf7b.png",
-      "PackagePath": "staticwebassets\\images\\74faf697-1b85-454d-af99-1ee8e904bf7b.png"
-    },
-    {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\d00f01a0-1ebc-42c7-9880-7d1283b04b77.png",
-      "PackagePath": "staticwebassets\\images\\d00f01a0-1ebc-42c7-9880-7d1283b04b77.png"
-    },
-    {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\dc76c9c1-63f8-4699-b7d0-516f44177ef1.png",
-      "PackagePath": "staticwebassets\\images\\dc76c9c1-63f8-4699-b7d0-516f44177ef1.png"
-    },
-    {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\e7758e19-8a2a-4c78-92c5-1c029460c8d2.png",
-      "PackagePath": "staticwebassets\\images\\e7758e19-8a2a-4c78-92c5-1c029460c8d2.png"
-    },
-    {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\efbbadf7-9395-422f-b51d-5388e118e008.png",
-      "PackagePath": "staticwebassets\\images\\efbbadf7-9395-422f-b51d-5388e118e008.png"
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\images\\fd7fdba3-9e42-4f73-aff3-4373dcdf746b.png",
+      "PackagePath": "staticwebassets\\images\\fd7fdba3-9e42-4f73-aff3-4373dcdf746b.png"
     },
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Cart.js",
       "PackagePath": "staticwebassets\\js\\Cart.js"
+    },
+    {
+      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Home.js",
+      "PackagePath": "staticwebassets\\js\\Home.js"
     },
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",
@@ -71,10 +59,6 @@
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\client-product-detail.js",
       "PackagePath": "staticwebassets\\js\\client-product-detail.js"
-    },
-    {
-      "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -303,6 +287,10 @@
     {
       "Id": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.Microsoft.AspNetCore.StaticWebAssets.props",

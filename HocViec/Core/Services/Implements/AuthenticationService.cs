@@ -3,7 +3,7 @@ using Core.Request;
 using Core.Services.Interfaces;
 using Infrastructure;
 using Infrastructure.Models.Enum;
-using Infrastructure.Models.User;
+using Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
@@ -24,16 +24,16 @@ namespace Core.Services.Implements
             _UserService = UserService;
             _httpContextAccessor = httpContextAccessor;
         }
-        public async Task<UserLoginResult> Login(string email, string password)
+        public async Task<UserLoginResult> Login(LoginRequest request)
         {
-            var dataUser = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
-            if (dataUser != null && Helper.PasswordHelper.VerifyPassword(password, dataUser.Password))
+            var dataUser = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
+            if (dataUser != null && Helper.PasswordHelper.VerifyPassword(request.Password, dataUser.Password))
             {
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, dataUser.Ten),
                     new Claim(ClaimTypes.Email, dataUser.Email),
-                    new Claim(ClaimTypes.Role, dataUser.VaiTro.ToString()) // Lưu role
+                    new Claim(ClaimTypes.Role, dataUser.VaiTro.ToString())
                 };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -50,6 +50,7 @@ namespace Core.Services.Implements
                 return new UserLoginResult
                 {
                     IsSuccess = true,
+                    UserId = dataUser.Id.ToString(),
                     Role = dataUser.VaiTro.ToString(),
                     Name = dataUser.Ten,
                     Email = dataUser.Email
@@ -58,18 +59,18 @@ namespace Core.Services.Implements
             return new UserLoginResult { IsSuccess = false };
         }
 
-        public async Task<bool> Register(string ten, string email, string password)
+        public async Task<bool> Register(RegisterRequest request)
         {
-            var User = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+            var User = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
             if (User != null)
             {
                 return false;
             }
-            var hashedPassword = PasswordHelper.HashPassword(password);
+            var hashedPassword = PasswordHelper.HashPassword(request.Password);
             var newUser = new User
             {
-                Ten = ten,
-                Email = email,
+                Ten = request.Ten,
+                Email = request.Email,
                 Password = hashedPassword,
                 TrangThai = true,
                 VaiTro = EnumRole.Customer

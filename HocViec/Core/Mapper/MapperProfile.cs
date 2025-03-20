@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Core.Request;
-using Infrastructure.Models.DanhMuc;
-using Infrastructure.Models.User;
+using Infrastructure.Models;
 
 namespace Core.Mapper
 {
@@ -41,6 +40,16 @@ namespace Core.Mapper
              .ForMember(dest => dest.TrangThai, opt => opt.MapFrom(src => src.TrangThai))
              .ForMember(dest => dest.UpdateDate, opt => opt.MapFrom(src => src.UpdatedDate))
             .ForMember(dest => dest.Images, opt => opt.Ignore());
+
+
+            CreateMap<CartItem, CartItemRequest>()
+            .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.SanPhamId))
+            .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.SoLuong))
+            .ForMember(dest => dest.StockQuantity, opt => opt.MapFrom(src => src.SanPham.SoLuong))
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.SanPham.AnhSanPhams.FirstOrDefault().ImageUrl))
+            .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.SanPham.Ten))
+            .ForMember(dest => dest.ProductCode, opt => opt.MapFrom(src => src.SanPham.MaSanPham))
+            .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.SanPham.GiaBan));
 
         }
     }

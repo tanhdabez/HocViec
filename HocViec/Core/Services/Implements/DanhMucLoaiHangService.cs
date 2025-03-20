@@ -2,8 +2,8 @@
 using Core.Request;
 using Core.Services.Interfaces;
 using Infrastructure;
-using Infrastructure.Models.DanhMuc;
-using Infrastructure.Repositories;
+using Infrastructure.Models;
+using Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services.Implements
@@ -11,26 +11,24 @@ namespace Core.Services.Implements
     public class DanhMucLoaiHangService : IDanhMucLoaiHangService
     {
         private readonly IMapper _mapper;
-        private readonly IRepository<DanhMucLoaiHang> _danhMucLoaiHang;
-        private readonly IRepository<SanPham> _sanPhamRepo;
+        private readonly IDanhMucLoaiHangRepository _danhMucLoaiHangRepo;
         private readonly AppDbContext _dbContext;
-        public DanhMucLoaiHangService(IMapper mapper, AppDbContext dbContext, IRepository<DanhMucLoaiHang> danhMucLoaiHang, IRepository<SanPham> sanPhamRepo)
+        public DanhMucLoaiHangService(IMapper mapper, AppDbContext dbContext, IDanhMucLoaiHangRepository danhMucLoaiHangRepo)
         {
             _mapper = mapper;
             _dbContext = dbContext;
-            _danhMucLoaiHang = danhMucLoaiHang;
-            _sanPhamRepo = sanPhamRepo;
+            _danhMucLoaiHangRepo = danhMucLoaiHangRepo;
         }
 
         public async Task<List<DanhMucLoaiHangResponse>> GetAllDanhMucLoaiHang()
         {
-            var response = await _danhMucLoaiHang.GetAllAsync();
+            var response = await _danhMucLoaiHangRepo.GetAllAsync();
             return _mapper.Map<List<DanhMucLoaiHangResponse>>(response);
         }
 
         public async Task<DanhMucLoaiHangResponse> GetDanhMucLoaiHangById(Guid id)
         {
-            var response = await _danhMucLoaiHang.GetByIdAsync(id);
+            var response = await _danhMucLoaiHangRepo.GetByIdAsync(id);
             if (response == null)
             {
                 throw new KeyNotFoundException("Không tìm thấy nhà cung cấp");
@@ -41,7 +39,7 @@ namespace Core.Services.Implements
         public async Task<bool> AddDanhMucLoaiHang(CreateDanhMucLoaiHangRequest request)
         {
             var newDanhMucLoaiHang = _mapper.Map<DanhMucLoaiHang>(request);
-            await _danhMucLoaiHang.AddAsync(newDanhMucLoaiHang);
+            await _danhMucLoaiHangRepo.AddAsync(newDanhMucLoaiHang);
             return true;
         }
 
@@ -51,51 +49,14 @@ namespace Core.Services.Implements
             if (response != null)
             {
                 _mapper.Map(request, response);
-                await _danhMucLoaiHang.UpdateAsync(response);
+                await _danhMucLoaiHangRepo.UpdateAsync(response);
             }
             return _mapper.Map<DanhMucLoaiHangResponse?>(response);
         }
 
         public async Task<bool> UpdateStatusDanhMucLoaiHang(Guid id)
         {
-            await _danhMucLoaiHang.UpdateStatusAsync(id);
-            var danhMucLoaiHang = await _dbContext.DanhMucLoaiHangs.FindAsync(id);
-            var dataSanPham = await _dbContext.SanPhams.Where(x => x.IdDanhMucSanPham == id).Select(x => new { x.Id, x.IdNhaCungCap, x.TrangThai }).ToListAsync();
-            if (dataSanPham.Any())
-            {
-                var nhaCungCapIds = dataSanPham.Select(x => x.IdNhaCungCap).Distinct().ToList();
-                var nhaCungCapDict = await _dbContext.NhaCungCaps
-                    .Where(x => nhaCungCapIds.Contains(x.Id))
-                    .ToDictionaryAsync(x => x.Id, x => x.TrangThai);
-                foreach (var item in dataSanPham)
-                {
-                    if (danhMucLoaiHang != null && danhMucLoaiHang.TrangThai) // Nếu danh mục bật
-                    {
-                        if (nhaCungCapDict.TryGetValue(item.IdNhaCungCap, out bool nhaCungCapTrangThai))
-                        {
-                            if (nhaCungCapTrangThai) // Nếu nhà cung cấp bật
-                            {
-                                await _sanPhamRepo.UpdateStatusAsync(item.Id); // Bật sản phẩm
-                            }
-                            else // Nếu nhà cung cấp tắt
-                            {
-                                if (item.TrangThai)
-                                {
-                                    await _sanPhamRepo.UpdateStatusAsync(item.Id); // Tắt sản phẩm nếu đang bật
-                                }
-                            }
-                        }
-                    }
-                    else // Nếu danh mục tắt
-                    {
-                        if (item.TrangThai)
-                        {
-                            await _sanPhamRepo.UpdateStatusAsync(item.Id); // Tắt sản phẩm nếu đang bật
-                        }
-                    }
-                }
-            }
-            return true;
+           return await _danhMucLoaiHangRepo.UpdateStatusAsync(id);
         }
 
     }

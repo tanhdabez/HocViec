@@ -101,8 +101,8 @@
 
                             <!-- Nhà cung cấp -->
                             <div class="mb-3">
-                                <label asp-for="IdNhaCungCap" class="form-label">Nhà Cung Cấp</label>
-                                <select asp-for="IdNhaCungCap" class="form-control">
+                                <label asp-for="NhaCungCapId" class="form-label">Nhà Cung Cấp</label>
+                                <select asp-for="NhaCungCapId" class="form-control">
                                     @if (ViewBag.NhaCungCaps != null)
                                     {
                                         @foreach (var nhaCungCap in ViewBag.NhaCungCaps)
@@ -115,13 +115,13 @@
                                         <option value="">Không có nhà cung cấp</option>
                                     }
                                 </select>
-                                <span asp-validation-for="IdNhaCungCap" class="text-danger"></span>
+                                <span asp-validation-for="NhaCungCapId" class="text-danger"></span>
                             </div>
 
                             <!-- Danh mục sản phẩm -->
                             <div class="mb-3">
-                                <label asp-for="IdDanhMucSanPham" class="form-label">Danh mục sản phẩm</label>
-                                <select asp-for="IdDanhMucSanPham" class="form-control">
+                                <label asp-for="DanhMucSanPhamId" class="form-label">Danh mục sản phẩm</label>
+                                <select asp-for="DanhMucSanPhamId" class="form-control">
                                     @if (ViewBag.DanhMucLoaiHangs != null)
                                     {
                                         @foreach (var danhMuc in ViewBag.DanhMucLoaiHangs)
@@ -134,7 +134,7 @@
                                         <option value="">Không có danh mục</option>
                                     }
                                 </select>
-                                <span asp-validation-for="IdDanhMucSanPham" class="text-danger"></span>
+                                <span asp-validation-for="DanhMucSanPhamId" class="text-danger"></span>
                             </div>
                             <!-- Ảnh sản phẩm -->
                             <div class="mb-3">

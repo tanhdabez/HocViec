@@ -1,44 +1,37 @@
 ﻿using AutoMapper;
 using Core.Request;
 using Core.Services.Interfaces;
-using Infrastructure;
-using Infrastructure.Models.DanhMuc;
-using Infrastructure.Repositories;
+using Infrastructure.Models;
+using Infrastructure.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services.Implements
 {
     public class SanPhamService : ISanPhamService
     {
-        private readonly AppDbContext _dbContext;
         private readonly IMapper _mapper;
-        private readonly IRepository<SanPham> _sanPhamRepo;
-        private readonly IRepository<AnhSanPham> _anhSanPhamRepo;
+        private readonly ISanPhamRepository _sanPhamRepo;
 
-        public SanPhamService(IMapper mapper, AppDbContext appDbContext, IRepository<SanPham> sanPhamRepo, IRepository<AnhSanPham> anhSanPhamRepo)
+        public SanPhamService(IMapper mapper, ISanPhamRepository sanPhamRepo)
         {
-            _dbContext = appDbContext;
             _mapper = mapper;
             _sanPhamRepo = sanPhamRepo;
-            _anhSanPhamRepo = anhSanPhamRepo;
         }
         public async Task<List<SanPhamResponse>> GetAllSanPham()
         {
-            var sanPhams = await _dbContext.SanPhams.Include(sp => sp.NhaCungCap).Include(sp => sp.DanhMucLoaiHang).Include(sp => sp.AnhSanPhams).ToListAsync();
+            var sanPhams = await _sanPhamRepo.GetAllSanPhamsWithIncludesAsync();
 
             return _mapper.Map<List<SanPhamResponse>>(sanPhams);
         }
         public async Task<SanPhamResponse> GetSanPhamById(Guid id)
         {
-            var sanPham = await _dbContext.SanPhams.Include(sp => sp.NhaCungCap).Include(sp => sp.DanhMucLoaiHang).Include(sp => sp.AnhSanPhams).FirstOrDefaultAsync(sp => sp.Id == id);
-
-            if (sanPham == null)
+            var sanPham = await _sanPhamRepo.GetSanPhamWithImagesAsync(id);
+            if (sanPham != null)
             {
-                throw new Exception("Không tìm thấy sản phẩm");
-            }
+                return _mapper.Map<SanPhamResponse>(sanPham);
 
-            return _mapper.Map<SanPhamResponse>(sanPham);
+            }
+            throw new Exception("Không tìm thấy sản phẩm");
         }
         private async Task<string> SaveImage(IFormFile image)
         {
@@ -63,10 +56,10 @@ namespace Core.Services.Implements
                     var imageUrl = await SaveImage(image);
                     var anhSanPham = new AnhSanPham
                     {
-                        IdSanPham = sanPham.Id,
+                        SanPhamId = sanPham.Id,
                         ImageUrl = imageUrl
                     };
-                    await _anhSanPhamRepo.AddAsync(anhSanPham);
+                    await _sanPhamRepo.AddAnhAsync(anhSanPham);
                 }
             }
             return true;
@@ -74,29 +67,27 @@ namespace Core.Services.Implements
 
         public async Task<SanPhamResponse?> UpdateSanPham(SanPhamResponse request)
         {
-            var sanPham = await _dbContext.SanPhams.Include(x => x.AnhSanPhams).FirstOrDefaultAsync(x => x.Id == request.Id);
-            if (sanPham == null)
+            var sanPham = await _sanPhamRepo.GetSanPhamWithImagesAsync(request.Id);
+            if (sanPham != null)
             {
-                return null;
-            }
-            if (request.Images != null && request.Images.Any())
-            {
-                foreach (var item in request.Images)
+                if (request.Images != null && request.Images.Any())
                 {
-                    var imageUrl = await SaveImage(item);
-                    var anhSanPham = new AnhSanPham
+                    foreach (var item in request.Images)
                     {
-                        IdSanPham = sanPham.Id,
-                        ImageUrl = imageUrl
-                    };
-                    await _anhSanPhamRepo.AddAsync(anhSanPham);
+                        var imageUrl = await SaveImage(item);
+                        var anhSanPham = new AnhSanPham
+                        {
+                            SanPhamId = sanPham.Id,
+                            ImageUrl = imageUrl
+                        };
+                        await _sanPhamRepo.AddAnhAsync(anhSanPham);
+                    }
                 }
+                _mapper.Map(request, sanPham);
+                await _sanPhamRepo.UpdateAsync(sanPham);
+                return _mapper.Map<SanPhamResponse>(sanPham);
             }
-            _mapper.Map(request, sanPham); // Ánh xạ dữ liệu từ request sang sanPham
-            await _sanPhamRepo.UpdateAsync(sanPham); // Cập nhật sản phẩm trong database
-
-            // Trả về thông tin sản phẩm đã cập nhật dưới dạng SanPhamResponse
-            return _mapper.Map<SanPhamResponse>(sanPham);
+            return null;
         }
 
         private void DeleteImageFile(string imageUrl)
@@ -124,22 +115,17 @@ namespace Core.Services.Implements
         {
             try
             {
-                // Xoá file ảnh từ thư mục
                 DeleteImageFile(imageUrl);
-
-                // Xoá ảnh từ database (nếu cần)
-                var image = await _dbContext.AnhSanPhams.FirstOrDefaultAsync(x => x.ImageUrl == imageUrl);
+                var image = await _sanPhamRepo.GetImageByUrlAsync(imageUrl);
                 if (image != null)
                 {
-                    _dbContext.AnhSanPhams.Remove(image);
-                    await _dbContext.SaveChangesAsync();
+                   await _sanPhamRepo.RemoveImageAsync(image);
                 }
 
                 return true;
             }
             catch (Exception ex)
             {
-                // Log lỗi nếu cần
                 Console.WriteLine($"Lỗi khi xoá ảnh: {ex.Message}");
                 return false;
             }

@@ -2,8 +2,8 @@
 using Core.Request;
 using Core.Services.Interfaces;
 using Infrastructure;
-using Infrastructure.Models.DanhMuc;
-using Infrastructure.Repositories;
+using Infrastructure.Models;
+using Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services.Implements
@@ -12,14 +12,12 @@ namespace Core.Services.Implements
     {
         private readonly IMapper _mapper;
         private readonly AppDbContext _dbContext;
-        private readonly IRepository<NhaCungCap> _nhaCungCapRepo;
-        private readonly IRepository<SanPham> _sanPhamRepo;
-        public NhaCungCapService(IMapper mapper, AppDbContext dbContext, IRepository<NhaCungCap> nhaCungCapRepo, IRepository<SanPham> sanPhamRepo)
+        private readonly INhaCungCapRepository _nhaCungCapRepo;
+        public NhaCungCapService(IMapper mapper, AppDbContext dbContext, INhaCungCapRepository nhaCungCapRepo)
         {
             _mapper = mapper;
             _dbContext = dbContext;
             _nhaCungCapRepo = nhaCungCapRepo;
-            _sanPhamRepo = sanPhamRepo;
         }
 
         public async Task<List<NhaCungCapResponse>> GetAllNhaCungCap()
@@ -47,15 +45,7 @@ namespace Core.Services.Implements
 
         public async Task<NhaCungCapResponse?> UpdateNhaCungCap(NhaCungCapResponse request)
         {
-            //var response = await _dbContext.NhaCungCaps.FirstOrDefaultAsync(x => x.Id == request.Id);
-            //if (response != null)
-            //{
-            //    _mapper.Map(request, response);
-            //    await _nhaCungCapRepo.UpdateAsync(response);
-            //}
-            //return _mapper.Map<NhaCungCapResponse>(response);
-
-            var response = await _dbContext.NhaCungCaps.FirstOrDefaultAsync(x => x.Id == request.Id);
+            var response = await _nhaCungCapRepo.GetByIdAsync(request.Id);
             if (response != null)
             {
                 _mapper.Map(request, response);
@@ -67,35 +57,7 @@ namespace Core.Services.Implements
 
         public async Task<bool> UpdateStatusNhaCungCap(Guid id)
         {
-            await _nhaCungCapRepo.UpdateStatusAsync(id);
-            var nhaCungCap = await _dbContext.NhaCungCaps.FindAsync(id);
-            var dataSP = await _dbContext.SanPhams.Where(x => x.IdNhaCungCap == id).Select(x => new { x.Id, x.TrangThai, x.IdDanhMucSanPham }).ToListAsync();
-            if (dataSP.Any())
-            {
-                var danhMucIds = dataSP.Select(sp => sp.IdDanhMucSanPham).Distinct().ToList(); // Sửa IdNhaCungCap thành IdDanhMucSanPham
-                var danhMucSanPhams = await _dbContext.DanhMucLoaiHangs
-                    .Where(dm => danhMucIds.Contains(dm.Id))
-                    .ToDictionaryAsync(dm => dm.Id, dm => dm.TrangThai);
-                foreach (var item in dataSP)
-                {
-                    if (danhMucSanPhams.TryGetValue(item.IdDanhMucSanPham, out bool trangThaiDanhMuc)) // Sửa IdNhaCungCap thành IdDanhMucSanPham
-                    {
-                        if (nhaCungCap != null && nhaCungCap.TrangThai && trangThaiDanhMuc) // Kiểm tra cả nhà cung cấp và danh mục
-                        {
-                            await _sanPhamRepo.UpdateStatusAsync(item.Id); // Bật sản phẩm nếu cả hai đều bật
-                        }
-                        else if (item.TrangThai)
-                        {
-                            await _sanPhamRepo.UpdateStatusAsync(item.Id); // Tắt sản phẩm nếu đang bật
-                        }
-                    }
-                    else if (item.TrangThai)
-                    {
-                        await _sanPhamRepo.UpdateStatusAsync(item.Id); // Tắt sản phẩm nếu đang bật
-                    }
-                }
-            }
-            return true;
+            return await _nhaCungCapRepo.UpdateStatusAsync(id);
         }
     }
 }

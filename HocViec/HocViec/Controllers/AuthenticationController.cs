@@ -27,36 +27,24 @@ namespace HocViec.Controllers
             {
                 return View(request);
             }
-
-            var result = await _authenticationService.Login(request.Email, request.Password);
-
-            if (result.IsSuccess)
-            {
-                HttpContext.Session.SetString("Name", result.Name);
-                HttpContext.Session.SetString("Email", result.Email);
-                HttpContext.Session.SetString("Role", result.Role);
-
-                if (result.Role == "Admin")
-                {
-                    return RedirectToAction("Index", "SanPham");
-                }
-                else if (result.Role == "Employee")
-                {
-                    return RedirectToAction("Index", "SanPham");
-                }
-                else if (result.Role == "Customer")
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    return BadRequest("Vai trò không xác định");
-                }
-            }
-            else
+            var result = await _authenticationService.Login(request);
+            if (!result.IsSuccess)
             {
                 ModelState.AddModelError("", "Đăng nhập thất bại");
                 return View(request);
+            }
+            HttpContext.Session.SetString("UserId", result.UserId.ToString());
+            HttpContext.Session.SetString("Name", result.Name);
+            HttpContext.Session.SetString("Email", result.Email);
+            HttpContext.Session.SetString("Role", result.Role);
+
+            if (result.Role == "Admin" || result.Role == "Employee")
+            {
+                return RedirectToAction("Index", "SanPham");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
             }
         }
 
@@ -74,7 +62,7 @@ namespace HocViec.Controllers
                 return View(request);
             }
 
-            var result = await _authenticationService.Register(request.Ten, request.Email, request.Password);
+            var result = await _authenticationService.Register(request);
 
             if (!result)
             {

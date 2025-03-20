@@ -47,7 +47,7 @@ namespace HocViec.Controllers
             }
         }
         [HttpGet("User/Create")]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             ViewBagData();
             return View();

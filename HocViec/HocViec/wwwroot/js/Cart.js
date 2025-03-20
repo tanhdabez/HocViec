@@ -79,8 +79,10 @@
         $('.product-checkbox:checked').each(function () {
             const productId = $(this).data('product-id');
             const quantity = parseInt($(this).closest('tr').find('.quantity-input').val());
-            const price = parseFloat($(this).closest('tr').find('.text-success').data('price'));
-            total += price * quantity;
+            const productTotalText = $(this).closest('tr').find('.product-total').text();
+            // Xóa "VND" và khoảng trắng, sau đó chuyển thành số
+            const productTotal = parseFloat(productTotalText.replace(/[^\d.-]/g, ''));
+            total += productTotal;
         });
         $('#selectedTotal').text(total.toLocaleString());
     }
@@ -119,18 +121,18 @@
             }
         });
     });
-    function updateCartCount() {
-        $.ajax({
-            url: "/Cart/GetCartItemCount", // Gọi API lấy số lượng giỏ hàng
-            type: "GET",
-            success: function (response) {
-                $("#cart-count").text(response.count); // Cập nhật số trên giỏ hàng
-            },
-            error: function () {
-                console.error("Lỗi khi lấy số lượng giỏ hàng!");
-            }
-        });
-    }
+    //function updateCartCount() {
+    //    $.ajax({
+    //        url: "/Cart/GetCartItemCount", // Gọi API lấy số lượng giỏ hàng
+    //        type: "GET",
+    //        success: function (response) {
+    //            $("#cart-count").text(response.count); // Cập nhật số trên giỏ hàng
+    //        },
+    //        error: function () {
+    //            console.error("Lỗi khi lấy số lượng giỏ hàng!");
+    //        }
+    //    });
+    //}
 
     // Gọi hàm cập nhật ngay khi trang load
     $(document).ready(function () {

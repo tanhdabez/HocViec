@@ -12,8 +12,8 @@ namespace Core.Request
         public int SoLuong { get; set; }
         public int GiaBan { get; set; }
         public bool TrangThai { get; set; }
-        public Guid IdNhaCungCap { get; set; }
-        public Guid IdDanhMucSanPham { get; set; }
+        public Guid NhaCungCapId { get; set; }
+        public Guid DanhMucSanPhamId { get; set; }
         public List<IFormFile>? Images { get; set; }
         public DateTime UpdateDate { get; set; }
     }
@@ -26,8 +26,8 @@ namespace Core.Request
         public int SoLuong { get; set; }
         public int GiaBan { get; set; }
         public bool TrangThai { get; set; }
-        public Guid IdNhaCungCap { get; set; }
-        public Guid IdDanhMucSanPham { get; set; }
+        public Guid NhaCungCapId { get; set; }
+        public Guid DanhMucSanPhamId { get; set; }
         public string? TenNhaCungCap { get; set; }
         public string? TenDanhMucSanPham { get; set; }
         public List<string>? AnhSanPhams { get; set; }

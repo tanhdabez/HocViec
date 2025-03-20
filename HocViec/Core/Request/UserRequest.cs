@@ -1,12 +1,5 @@
-﻿using Infrastructure.Entities;
-using Infrastructure.Models.Enum;
-using Infrastructure.Models.User;
-using System;
-using System.Collections.Generic;
+﻿using Infrastructure.Models.Enum;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Request
 {
@@ -33,7 +26,7 @@ namespace Core.Request
         [Required(ErrorMessage = "Tên không được để trống")]
         public required string Ten { get; set; }
         [EmailAddress(ErrorMessage = "Không đúng định dạng Email")]
-        public required string? Email { get; set; }
+        public required string Email { get; set; }
         public string? Password { get; set; } = null;
         public string? SDT { get; set; }
         [StringLength(200, ErrorMessage = "Địa chỉ không được vượt quá 200 ký tự")]

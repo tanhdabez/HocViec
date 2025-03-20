@@ -22,7 +22,7 @@ namespace Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Infrastructure.Models.Bills.ChiTietHoaDon", b =>
+            modelBuilder.Entity("Infrastructure.Models.AnhSanPham", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,13 +31,63 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DonGia")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("IDHoaDon")
+                    b.Property<Guid>("SanPhamId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdSanPham")
+                    b.Property<bool>("TrangThai")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SanPhamId");
+
+                    b.ToTable("AnhSanPhams");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.Cart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("TrangThai")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.CartItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CartId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("SanPhamId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("SoLuong")
@@ -51,92 +101,50 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IDHoaDon");
+                    b.HasIndex("CartId");
 
-                    b.HasIndex("IdSanPham");
+                    b.HasIndex("SanPhamId");
+
+                    b.ToTable("CartItems");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.ChiTietHoaDon", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DonGia")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("HoaDonId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SanPhamId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("TrangThai")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HoaDonId");
+
+                    b.HasIndex("SanPhamId");
 
                     b.ToTable("ChiTietHoaDons");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.Bills.HoaDon", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DiaChi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("GhiChu")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("IdNhanVien")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("MaHD")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PhuongThucThanhToan")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SDT")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TenNguoiNhan")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("TongTien")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdNhanVien");
-
-                    b.ToTable("HoaDons");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.AnhSanPham", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("IdSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdSanPham");
-
-                    b.ToTable("AnhSanPhams");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.DanhMucLoaiHang", b =>
+            modelBuilder.Entity("Infrastructure.Models.DanhMucLoaiHang", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -163,7 +171,60 @@ namespace Infrastructure.Migrations
                     b.ToTable("DanhMucLoaiHangs");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.NhaCungCap", b =>
+            modelBuilder.Entity("Infrastructure.Models.HoaDon", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DiaChi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GhiChu")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaHD")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("NhanVienId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("PhuongThucThanhToan")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SDT")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenNguoiNhan")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TongTien")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("TrangThai")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("HoaDons");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.NhaCungCap", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -190,7 +251,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("NhaCungCaps");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.SanPham", b =>
+            modelBuilder.Entity("Infrastructure.Models.SanPham", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -199,20 +260,20 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("DanhMucSanPhamId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("GiaBan")
                         .HasColumnType("int");
-
-                    b.Property<Guid>("IdDanhMucSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdNhaCungCap")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("MaSanPham")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Mota")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("NhaCungCapId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("SoLuong")
                         .HasColumnType("int");
@@ -229,80 +290,14 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdDanhMucSanPham");
+                    b.HasIndex("DanhMucSanPhamId");
 
-                    b.HasIndex("IdNhaCungCap");
+                    b.HasIndex("NhaCungCapId");
 
                     b.ToTable("SanPhams");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.User.Cart", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("IdKhachHang")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("SanPhamId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SanPhamId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Carts");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.User.CartItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("IdCart")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdSanPham")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("SoLuong")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdCart");
-
-                    b.HasIndex("IdSanPham");
-
-                    b.ToTable("CartItems");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.User.User", b =>
+            modelBuilder.Entity("Infrastructure.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -344,90 +339,39 @@ namespace Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.Bills.ChiTietHoaDon", b =>
+            modelBuilder.Entity("Infrastructure.Models.AnhSanPham", b =>
                 {
-                    b.HasOne("Infrastructure.Models.Bills.HoaDon", "HoaDon")
-                        .WithMany("ChiTietHoaDons")
-                        .HasForeignKey("IDHoaDon")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Infrastructure.Models.DanhMuc.SanPham", "SanPham")
-                        .WithMany("ChiTietHoaDons")
-                        .HasForeignKey("IdSanPham")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HoaDon");
-
-                    b.Navigation("SanPham");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.Bills.HoaDon", b =>
-                {
-                    b.HasOne("Infrastructure.Models.User.User", "NhanVien")
-                        .WithMany()
-                        .HasForeignKey("IdNhanVien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("NhanVien");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.AnhSanPham", b =>
-                {
-                    b.HasOne("Infrastructure.Models.DanhMuc.SanPham", "SanPham")
+                    b.HasOne("Infrastructure.Models.SanPham", "SanPham")
                         .WithMany("AnhSanPhams")
-                        .HasForeignKey("IdSanPham")
+                        .HasForeignKey("SanPhamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.SanPham", b =>
+            modelBuilder.Entity("Infrastructure.Models.Cart", b =>
                 {
-                    b.HasOne("Infrastructure.Models.DanhMuc.DanhMucLoaiHang", "DanhMucLoaiHang")
-                        .WithMany("SanPhams")
-                        .HasForeignKey("IdDanhMucSanPham")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Infrastructure.Models.DanhMuc.NhaCungCap", "NhaCungCap")
-                        .WithMany("sanPhams")
-                        .HasForeignKey("IdNhaCungCap")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DanhMucLoaiHang");
-
-                    b.Navigation("NhaCungCap");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.User.Cart", b =>
-                {
-                    b.HasOne("Infrastructure.Models.DanhMuc.SanPham", null)
-                        .WithMany("Carts")
-                        .HasForeignKey("SanPhamId");
-
-                    b.HasOne("Infrastructure.Models.User.User", "User")
+                    b.HasOne("Infrastructure.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.User.CartItem", b =>
+            modelBuilder.Entity("Infrastructure.Models.CartItem", b =>
                 {
-                    b.HasOne("Infrastructure.Models.User.Cart", "Cart")
+                    b.HasOne("Infrastructure.Models.Cart", "Cart")
                         .WithMany("CartItems")
-                        .HasForeignKey("IdCart")
+                        .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Infrastructure.Models.DanhMuc.SanPham", "SanPham")
+                    b.HasOne("Infrastructure.Models.SanPham", "SanPham")
                         .WithMany()
-                        .HasForeignKey("IdSanPham")
+                        .HasForeignKey("SanPhamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -436,33 +380,78 @@ namespace Infrastructure.Migrations
                     b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.Bills.HoaDon", b =>
+            modelBuilder.Entity("Infrastructure.Models.ChiTietHoaDon", b =>
                 {
-                    b.Navigation("ChiTietHoaDons");
+                    b.HasOne("Infrastructure.Models.HoaDon", "HoaDon")
+                        .WithMany("ChiTietHoaDons")
+                        .HasForeignKey("HoaDonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Infrastructure.Models.SanPham", "SanPham")
+                        .WithMany("ChiTietHoaDons")
+                        .HasForeignKey("SanPhamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HoaDon");
+
+                    b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.DanhMucLoaiHang", b =>
+            modelBuilder.Entity("Infrastructure.Models.HoaDon", b =>
+                {
+                    b.HasOne("Infrastructure.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.SanPham", b =>
+                {
+                    b.HasOne("Infrastructure.Models.DanhMucLoaiHang", "DanhMucLoaiHang")
+                        .WithMany("SanPhams")
+                        .HasForeignKey("DanhMucSanPhamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Infrastructure.Models.NhaCungCap", "NhaCungCap")
+                        .WithMany("sanPhams")
+                        .HasForeignKey("NhaCungCapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DanhMucLoaiHang");
+
+                    b.Navigation("NhaCungCap");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.Cart", b =>
+                {
+                    b.Navigation("CartItems");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.DanhMucLoaiHang", b =>
                 {
                     b.Navigation("SanPhams");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.NhaCungCap", b =>
+            modelBuilder.Entity("Infrastructure.Models.HoaDon", b =>
+                {
+                    b.Navigation("ChiTietHoaDons");
+                });
+
+            modelBuilder.Entity("Infrastructure.Models.NhaCungCap", b =>
                 {
                     b.Navigation("sanPhams");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.DanhMuc.SanPham", b =>
+            modelBuilder.Entity("Infrastructure.Models.SanPham", b =>
                 {
                     b.Navigation("AnhSanPhams");
 
-                    b.Navigation("Carts");
-
                     b.Navigation("ChiTietHoaDons");
-                });
-
-            modelBuilder.Entity("Infrastructure.Models.User.Cart", b =>
-                {
-                    b.Navigation("CartItems");
                 });
 #pragma warning restore 612, 618
         }

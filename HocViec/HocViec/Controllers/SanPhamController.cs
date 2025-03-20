@@ -1,8 +1,5 @@
 ﻿using Core.Request;
-using Core.Services.Implements;
 using Core.Services.Interfaces;
-using Infrastructure.Migrations;
-using Infrastructure.Models.DanhMuc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -65,6 +62,8 @@ namespace HocViec.Controllers
         {
             try
             {
+                await ViewBagData();
+
                 bool isAdded = await _sanPhamService.AddSanPham(request);
 
                 if (!isAdded)
@@ -157,6 +156,7 @@ namespace HocViec.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "An error occurred while deleting the image.");
                 return StatusCode(500, "Đã xảy ra lỗi khi xoá ảnh.");
             }
         }
