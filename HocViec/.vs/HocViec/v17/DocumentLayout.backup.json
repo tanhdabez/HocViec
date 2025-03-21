@@ -3,32 +3,92 @@
   "WorkspaceRootPath": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\wwwroot\\js\\cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\wwwroot\\js\\cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\wwwroot\\js\\client-product-detail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\wwwroot\\js\\client-product-detail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\interfaces\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\interfaces\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\nhacungcapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\nhacungcapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\sanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\sanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\interfaces\\isanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\interfaces\\isanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\implements\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\implements\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\ihoadonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\ihoadonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\icheckoutrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\icheckoutrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\authentication\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\authentication\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\shared\\adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\shared\\adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\wwwroot\\js\\client-product-detail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\wwwroot\\js\\client-product-detail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\sanphamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\request\\sanphamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\home\\chitietsanpham_home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\home\\chitietsanpham_home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\nhacungcaprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,58 +111,6 @@
       "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\wwwroot\\css\\home.css||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\request\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\sanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\sanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\nhacungcapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\nhacungcapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\implements\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\implements\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\isanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\isanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\implements\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\implements\\sanphamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -111,16 +119,8 @@
       "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\nhacungcapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\nhacungcapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -131,32 +131,12 @@
       "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\danhmucloaihangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\request\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\sanphamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\request\\sanphamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\implements\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\implements\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\views\\sanpham\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -179,20 +159,8 @@
       "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\interfaces\\idanhmucloaihangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\interfaces\\isanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\interfaces\\isanphamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\interfaces\\inhacungcapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\interfaces\\inhacungcapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\services\\interfaces\\icustomauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -203,20 +171,8 @@
       "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\idanhmucloaihangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\idanhmucloaihangrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\repositories\\interfaces\\inhacungcaprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\interfaces\\inhacungcaprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\hocviec\\controllers\\danhmucloaihangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817FE09E-0A24-4F16-B7EA-F10651A4DBCC}|HocViec\\App.csproj|solutionrelative:hocviec\\controllers\\danhmucloaihangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\migrations\\20250319171313_initial1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -231,14 +187,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20250319171256_intial1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\core\\request\\danhmucloaihangrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF0D3BF3-2D39-4900-B0B8-09BD4DA0CFAC}|Core\\Core.csproj|solutionrelative:core\\request\\danhmucloaihangrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|c:\\users\\f1sh\\desktop\\hocviec\\hocviec\\infrastructure\\models\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DBA92A1-C922-4FFA-9674-8D246B61C8A6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\models\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -250,104 +198,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CartRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\CartRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Implements\\CartRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\CartRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Implements\\CartRepository.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAowDAAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T04:02:57.167Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CartService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\CartService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Implements\\CartService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\CartService.cs",
-              "RelativeToolTip": "Core\\Services\\Implements\\CartService.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAlwKAAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T03:02:41.834Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "HocViec\\Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\CartController.cs",
-              "RelativeToolTip": "HocViec\\Controllers\\CartController.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAASwEMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:19:04.675Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICartService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ICartService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\ICartService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ICartService.cs",
-              "RelativeToolTip": "Core\\Services\\Interfaces\\ICartService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T07:40:45.294Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "HocViec\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "HocViec\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwFUAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-20T05:19:06.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "HocViec\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "HocViec\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-20T09:22:12.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Home.js",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Home.js",
-              "RelativeDocumentMoniker": "HocViec\\wwwroot\\js\\Home.js",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Home.js",
-              "RelativeToolTip": "HocViec\\wwwroot\\js\\Home.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-20T09:30:17.243Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -357,27 +216,27 @@
               "RelativeDocumentMoniker": "HocViec\\wwwroot\\js\\Cart.js",
               "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Cart.js",
               "RelativeToolTip": "HocViec\\wwwroot\\js\\Cart.js",
-              "ViewState": "AgIAAFQAAAAAAAAAAAApwGYAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwEEAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-03-20T04:22:53.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "HocViec\\Views\\Shared\\AdminLayout.cshtml",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\AdminLayout.cshtml",
-              "RelativeToolTip": "HocViec\\Views\\Shared\\AdminLayout.cshtml",
-              "ViewState": "AgIAACYAAAAAAAAAAAAYwDcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-20T09:34:25.663Z",
+              "DocumentIndex": 6,
+              "Title": "SanPhamService.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\SanPhamService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\Implements\\SanPhamService.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\SanPhamService.cs",
+              "RelativeToolTip": "Core\\Services\\Implements\\SanPhamService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowC4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T07:28:31.343Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "client-product-detail.js",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\client-product-detail.js",
               "RelativeDocumentMoniker": "HocViec\\wwwroot\\js\\client-product-detail.js",
@@ -390,80 +249,145 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NhaCungCapRequest.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\NhaCungCapRequest.cs",
-              "RelativeDocumentMoniker": "Core\\Request\\NhaCungCapRequest.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\NhaCungCapRequest.cs",
-              "RelativeToolTip": "Core\\Request\\NhaCungCapRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAXAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "NhaCungCapController.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\NhaCungCapController.cs",
+              "RelativeDocumentMoniker": "HocViec\\Controllers\\NhaCungCapController.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\NhaCungCapController.cs",
+              "RelativeToolTip": "HocViec\\Controllers\\NhaCungCapController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:08:33.858Z",
+              "WhenOpened": "2025-03-19T17:10:04.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "HocViec\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "HocViec\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T17:28:45.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "HocViec\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "HocViec\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADQAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T04:23:13.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "HocViec\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\CartController.cs",
+              "RelativeToolTip": "HocViec\\Controllers\\CartController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T07:31:22.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\UserService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\Implements\\UserService.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\UserService.cs",
+              "RelativeToolTip": "Core\\Services\\Implements\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T07:37:41.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Product.js",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",
-              "RelativeDocumentMoniker": "HocViec\\wwwroot\\js\\Product.js",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",
-              "RelativeToolTip": "HocViec\\wwwroot\\js\\Product.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Home.js",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Home.js",
+              "RelativeDocumentMoniker": "HocViec\\wwwroot\\js\\Home.js",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Home.js",
+              "RelativeToolTip": "HocViec\\wwwroot\\js\\Home.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-20T07:21:23.333Z",
+              "WhenOpened": "2025-03-20T09:30:17.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Home.css",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
-              "RelativeDocumentMoniker": "HocViec\\wwwroot\\css\\Home.css",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
-              "RelativeToolTip": "HocViec\\wwwroot\\css\\Home.css",
+              "Title": "ISanPhamService.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ISanPhamService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\ISanPhamService.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ISanPhamService.cs",
+              "RelativeToolTip": "Core\\Services\\Interfaces\\ISanPhamService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-20T09:30:45.894Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T02:52:33.859Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "HocViec\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "HocViec\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-20T09:30:48.454Z",
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\SanPham.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Models\\SanPham.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\SanPham.cs",
+              "RelativeToolTip": "Infrastructure\\Models\\SanPham.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T17:14:32.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ICheckoutRepository.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\ICheckoutRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\ICheckoutRepository.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\ICheckoutRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Interfaces\\ICheckoutRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T03:49:07.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IHoaDonRepository.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\IHoaDonRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\IHoaDonRepository.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\IHoaDonRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Interfaces\\IHoaDonRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T03:49:25.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Home.css",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
-              "RelativeDocumentMoniker": "HocViec\\wwwroot\\css\\Home.css",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
-              "RelativeToolTip": "HocViec\\wwwroot\\css\\Home.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-20T09:30:33.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SanPhamService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\SanPhamService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Implements\\SanPhamService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\SanPhamService.cs",
-              "RelativeToolTip": "Core\\Services\\Implements\\SanPhamService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Title": "SanPhamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:08:09.207Z",
+              "WhenOpened": "2025-03-21T07:28:24.46Z",
               "EditorCaption": ""
             },
             {
@@ -474,101 +398,163 @@
               "RelativeDocumentMoniker": "HocViec\\Program.cs",
               "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Program.cs",
               "RelativeToolTip": "HocViec\\Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAYwCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T17:30:52.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CartRequest.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\CartRequest.cs",
-              "RelativeDocumentMoniker": "Core\\Request\\CartRequest.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\CartRequest.cs",
-              "RelativeToolTip": "Core\\Request\\CartRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T05:15:17.782Z",
+              "DocumentIndex": 15,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Authentication\\Login.cshtml",
+              "RelativeDocumentMoniker": "HocViec\\Views\\Authentication\\Login.cshtml",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Authentication\\Login.cshtml",
+              "RelativeToolTip": "HocViec\\Views\\Authentication\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-21T02:37:30.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Cart\\Index.cshtml",
-              "RelativeDocumentMoniker": "HocViec\\Views\\Cart\\Index.cshtml",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Cart\\Index.cshtml",
-              "RelativeToolTip": "HocViec\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEoAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "HocViec\\Views\\Shared\\AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\AdminLayout.cshtml",
+              "RelativeToolTip": "HocViec\\Views\\Shared\\AdminLayout.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwDcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-20T04:23:13.73Z",
+              "WhenOpened": "2025-03-20T09:34:25.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "HocViec\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "HocViec\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T09:22:12.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "NhaCungCapService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\NhaCungCapService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Implements\\NhaCungCapService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\NhaCungCapService.cs",
-              "RelativeToolTip": "Core\\Services\\Implements\\NhaCungCapService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:52:38.146Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "HocViec\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "HocViec\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwDQAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T05:19:06.897Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SanPhamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Implements\\SanPhamRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAEwCIAAAA8AAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "SanPhamRequest.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\SanPhamRequest.cs",
+              "RelativeDocumentMoniker": "Core\\Request\\SanPhamRequest.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\SanPhamRequest.cs",
+              "RelativeToolTip": "Core\\Request\\SanPhamRequest.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwBoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:47:32.725Z"
+              "WhenOpened": "2025-03-20T03:41:00.193Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "ISanPhamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Interfaces\\ISanPhamRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAWAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "HocViec\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "HocViec\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:47:36.988Z"
+              "WhenOpened": "2025-03-19T17:28:46.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "HocViec\\Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "HocViec\\Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:28:45.442Z"
+              "DocumentIndex": 21,
+              "Title": "ChiTietSanPham_Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Home\\ChiTietSanPham_Home.cshtml",
+              "RelativeDocumentMoniker": "HocViec\\Views\\Home\\ChiTietSanPham_Home.cshtml",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\Home\\ChiTietSanPham_Home.cshtml",
+              "RelativeToolTip": "HocViec\\Views\\Home\\ChiTietSanPham_Home.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T09:53:22.221Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "ICartRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\ICartRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\ICartRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\ICartRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Interfaces\\ICartRepository.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAwwA4AAAATAAAAAAAAAA==",
+              "Title": "NhaCungCapRequest.cs",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\NhaCungCapRequest.cs",
+              "RelativeDocumentMoniker": "Core\\Request\\NhaCungCapRequest.cs",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\NhaCungCapRequest.cs",
+              "RelativeToolTip": "Core\\Request\\NhaCungCapRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T07:33:58.436Z"
+              "WhenOpened": "2025-03-19T17:08:33.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Product.js",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",
+              "RelativeDocumentMoniker": "HocViec\\wwwroot\\js\\Product.js",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Product.js",
+              "RelativeToolTip": "HocViec\\wwwroot\\js\\Product.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-20T07:21:23.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Home.css",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
+              "RelativeDocumentMoniker": "HocViec\\wwwroot\\css\\Home.css",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
+              "RelativeToolTip": "HocViec\\wwwroot\\css\\Home.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-20T09:30:45.894Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "HocViec\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "HocViec\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-20T09:30:48.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Home.css",
+              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
+              "RelativeDocumentMoniker": "HocViec\\wwwroot\\css\\Home.css",
+              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\css\\Home.css",
+              "RelativeToolTip": "HocViec\\wwwroot\\css\\Home.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-20T09:30:33.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\AppDbContext.cs",
@@ -580,19 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Core\\Request\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\LoginRequest.cs",
-              "RelativeToolTip": "Core\\Request\\LoginRequest.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAiwBwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T05:04:26.282Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "NhaCungCap.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\NhaCungCap.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Models\\NhaCungCap.cs",
@@ -604,19 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Implements\\AuthenticationService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\AuthenticationService.cs",
-              "RelativeToolTip": "Core\\Services\\Implements\\AuthenticationService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAWwDoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:06:49.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "SanPhamController.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\SanPhamController.cs",
               "RelativeDocumentMoniker": "HocViec\\Controllers\\SanPhamController.cs",
@@ -625,18 +587,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T17:09:55.701Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "NhaCungCapController.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\NhaCungCapController.cs",
-              "RelativeDocumentMoniker": "HocViec\\Controllers\\NhaCungCapController.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\NhaCungCapController.cs",
-              "RelativeToolTip": "HocViec\\Controllers\\NhaCungCapController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwHYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:10:04.539Z"
             },
             {
               "$type": "Document",
@@ -665,18 +615,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 32,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "HocViec\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "HocViec\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:15:08.283Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\User.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Models\\User.cs",
@@ -688,19 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "SanPham.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\SanPham.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Models\\SanPham.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\SanPham.cs",
-              "RelativeToolTip": "Infrastructure\\Models\\SanPham.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:14:32.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 33,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Models\\Cart.cs",
@@ -712,43 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UserRequest.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\UserRequest.cs",
-              "RelativeDocumentMoniker": "Core\\Request\\UserRequest.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\UserRequest.cs",
-              "RelativeToolTip": "Core\\Request\\UserRequest.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:06:40.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "SanPhamRequest.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\SanPhamRequest.cs",
-              "RelativeDocumentMoniker": "Core\\Request\\SanPhamRequest.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\SanPhamRequest.cs",
-              "RelativeToolTip": "Core\\Request\\SanPhamRequest.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T03:41:00.193Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Implements\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Implements\\UserRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Implements\\UserRepository.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA1wC4AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:47:00.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 34,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\SanPham\\Update.cshtml",
               "RelativeDocumentMoniker": "HocViec\\Views\\SanPham\\Update.cshtml",
@@ -760,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 35,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Views\\SanPham\\Create.cshtml",
               "RelativeDocumentMoniker": "HocViec\\Views\\SanPham\\Create.cshtml",
@@ -772,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 36,
               "Title": "DanhMucLoaiHang.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\DanhMucLoaiHang.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Models\\DanhMucLoaiHang.cs",
@@ -784,7 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 37,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\appsettings.Development.json",
               "RelativeDocumentMoniker": "HocViec\\appsettings.Development.json",
@@ -796,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 38,
               "Title": "IDanhMucLoaiHangService.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\IDanhMucLoaiHangService.cs",
               "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\IDanhMucLoaiHangService.cs",
@@ -808,31 +698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\UserService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Implements\\UserService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Implements\\UserService.cs",
-              "RelativeToolTip": "Core\\Services\\Implements\\UserService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:52:37.307Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "ISanPhamService.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ISanPhamService.cs",
-              "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\ISanPhamService.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ISanPhamService.cs",
-              "RelativeToolTip": "Core\\Services\\Interfaces\\ISanPhamService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:52:33.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 39,
               "Title": "INhaCungCapService.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\INhaCungCapService.cs",
               "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\INhaCungCapService.cs",
@@ -844,19 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T03:00:03.445Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 40,
               "Title": "ICustomAuthenticationService.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\ICustomAuthenticationService.cs",
               "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\ICustomAuthenticationService.cs",
@@ -868,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 41,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Core\\Services\\Interfaces\\IUserService.cs",
@@ -880,19 +734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "IDanhMucLoaiHangRepository.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\IDanhMucLoaiHangRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\IDanhMucLoaiHangRepository.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\IDanhMucLoaiHangRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\Interfaces\\IDanhMucLoaiHangRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:48:54.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 42,
               "Title": "INhaCungCapRepository.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Repositories\\Interfaces\\INhaCungCapRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\INhaCungCapRepository.cs",
@@ -904,31 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "HocViec\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "HocViec\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:28:46.012Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "DanhMucLoaiHangController.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\DanhMucLoaiHangController.cs",
-              "RelativeDocumentMoniker": "HocViec\\Controllers\\DanhMucLoaiHangController.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\Controllers\\DanhMucLoaiHangController.cs",
-              "RelativeToolTip": "HocViec\\Controllers\\DanhMucLoaiHangController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:15:07.535Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 44,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
@@ -940,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 43,
               "Title": "20250319171313_initial1.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Migrations\\20250319171313_initial1.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250319171313_initial1.cs",
@@ -952,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 45,
               "Title": "20250319171256_intial1.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Migrations\\20250319171256_intial1.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250319171256_intial1.cs",
@@ -964,31 +782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "HoaDon.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\HoaDon.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Models\\HoaDon.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\HoaDon.cs",
-              "RelativeToolTip": "Infrastructure\\Models\\HoaDon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:10:29.752Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "DanhMucLoaiHangRequest.cs",
-              "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\DanhMucLoaiHangRequest.cs",
-              "RelativeDocumentMoniker": "Core\\Request\\DanhMucLoaiHangRequest.cs",
-              "ToolTip": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Core\\Request\\DanhMucLoaiHangRequest.cs",
-              "RelativeToolTip": "Core\\Request\\DanhMucLoaiHangRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:08:42.596Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 46,
               "Title": "BaseModel.cs",
               "DocumentMoniker": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\Infrastructure\\Models\\BaseModel.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Models\\BaseModel.cs",

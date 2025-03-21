@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g9hSNBoNPjmRftu9Ef/DuWodu63CmVWhMPEI/85SJNQ=",
+  "Hash": "MqsdHopg1BIyHkiVZQwSaeVdSDjJS02xgGY/AYzegwE=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
@@ -325,8 +325,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "o75ylndhpr",
-      "Integrity": "5E9CJjn+5g9lV3OK3DC0c1voMFeMOAam8Z3ZgYEp69E=",
+      "Fingerprint": "sxuyovdvf3",
+      "Integrity": "IFVioWRtp4Vk/rqpTYO4WyQK+B+eQIpcEDCv0bx4z7I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Home.js"
@@ -1574,7 +1574,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 09:21:34 GMT"
+          "Value": "Fri, 21 Mar 2025 07:35:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1611,7 +1611,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 09:21:34 GMT"
+          "Value": "Fri, 21 Mar 2025 07:35:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1656,7 +1656,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 09:21:34 GMT"
+          "Value": "Fri, 21 Mar 2025 07:35:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1701,7 +1701,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 09:21:34 GMT"
+          "Value": "Fri, 21 Mar 2025 07:35:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2558,7 +2558,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 08:32:40 GMT"
+          "Value": "Fri, 21 Mar 2025 07:34:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2595,7 +2595,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 08:32:40 GMT"
+          "Value": "Fri, 21 Mar 2025 07:34:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2710,7 +2710,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "868"
+          "Value": "828"
         },
         {
           "Name": "Content-Type",
@@ -2718,11 +2718,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"5E9CJjn+5g9lV3OK3DC0c1voMFeMOAam8Z3ZgYEp69E=\""
+          "Value": "\"IFVioWRtp4Vk/rqpTYO4WyQK+B+eQIpcEDCv0bx4z7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 09:52:10 GMT"
+          "Value": "Fri, 21 Mar 2025 07:39:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2732,12 +2732,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-5E9CJjn+5g9lV3OK3DC0c1voMFeMOAam8Z3ZgYEp69E="
+          "Value": "sha256-IFVioWRtp4Vk/rqpTYO4WyQK+B+eQIpcEDCv0bx4z7I="
         }
       ]
     },
     {
-      "Route": "js/Home.o75ylndhpr.js",
+      "Route": "js/Home.sxuyovdvf3.js",
       "AssetFile": "C:\\Users\\F1sh\\Desktop\\HocViec\\HocViec\\HocViec\\wwwroot\\js\\Home.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2747,7 +2747,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "868"
+          "Value": "828"
         },
         {
           "Name": "Content-Type",
@@ -2755,11 +2755,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"5E9CJjn+5g9lV3OK3DC0c1voMFeMOAam8Z3ZgYEp69E=\""
+          "Value": "\"IFVioWRtp4Vk/rqpTYO4WyQK+B+eQIpcEDCv0bx4z7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 09:52:10 GMT"
+          "Value": "Fri, 21 Mar 2025 07:39:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2769,7 +2769,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o75ylndhpr"
+          "Value": "sxuyovdvf3"
         },
         {
           "Name": "label",
@@ -2777,7 +2777,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-5E9CJjn+5g9lV3OK3DC0c1voMFeMOAam8Z3ZgYEp69E="
+          "Value": "sha256-IFVioWRtp4Vk/rqpTYO4WyQK+B+eQIpcEDCv0bx4z7I="
         }
       ]
     },

@@ -165,6 +165,7 @@ namespace Core.Services.Implements
                         {
                             ProductId = item.ProductId,
                             Quantity = item.Quantity,
+                            StockQuantity = product.SoLuong,
                             ProductName = product.Ten,
                             Price = product.GiaBan,
                             ImageUrl = product.AnhSanPhams?.FirstOrDefault()?.ImageUrl
