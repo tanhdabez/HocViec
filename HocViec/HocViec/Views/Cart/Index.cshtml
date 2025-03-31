@@ -1,9 +1,18 @@
 ﻿@model List<Core.Request.CartItemRequest>
 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-
+<style>
+    .out-of-stock {
+        opacity: 0.5; /* Làm mờ dòng */
+        pointer-events: none; /* Ngăn chặn tương tác */
+    }
+</style>
 <div class="container mt-5">
     <h2 class="text-center text-primary fw-bold">Giỏ Hàng</h2>
 
@@ -61,7 +70,7 @@
                 <p class="fs-5 fw-bold">Tổng tiền đã chọn: <span id="selectedTotal">0</span> VND</p>
                 <div>
                     <a asp-action="ClearCart" class="btn btn-outline-danger me-2 mb-2">Xóa hết</a>
-                    <a href="#" class="btn btn-success mb-2">Thanh toán</a>
+                    <a href="" id="checkoutButton" class="btn btn-success mb-2">Thanh toán</a>
                 </div>
             </div>
         </div>

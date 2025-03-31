@@ -17,12 +17,21 @@ namespace Core.Services.Implements
             _mapper = mapper;
             _sanPhamRepo = sanPhamRepo;
         }
+
+        public async Task<List<SanPhamResponse>> GetAllSanPham_Home()
+        {
+            var sanPhams = await _sanPhamRepo.GetAllAsync();
+
+            return _mapper.Map<List<SanPhamResponse>>(sanPhams);
+        }
+
         public async Task<List<SanPhamResponse>> GetAllSanPham()
         {
             var sanPhams = await _sanPhamRepo.GetAllSanPhamsWithIncludesAsync();
 
             return _mapper.Map<List<SanPhamResponse>>(sanPhams);
         }
+
         public async Task<SanPhamResponse> GetSanPhamById(Guid id)
         {
             var sanPham = await _sanPhamRepo.GetSanPhamWithImagesAsync(id);
@@ -33,6 +42,7 @@ namespace Core.Services.Implements
             }
             throw new Exception("Không tìm thấy sản phẩm");
         }
+
         private async Task<string> SaveImage(IFormFile image)
         {
             var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);

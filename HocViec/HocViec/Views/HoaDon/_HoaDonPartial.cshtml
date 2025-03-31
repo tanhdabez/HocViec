@@ -1,0 +1,85 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Core.Request.HoaDonResponse>
+
+@{
+    decimal? tongTienTatCa = ViewBag.TongTienTatCa;
+}
+
+
+<table class="table table-hover table-bordered text-center align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã Hóa Đơn</th>
+            <th>Ngày Tạo</th>
+            <th>Khách Hàng</th>
+            <th>Trạng Thái</th>
+            <th>Tổng Tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="total-row">
+            <td colspan="4"><strong>Tổng tiền </strong></td>
+            <td><strong>@(tongTienTatCa?.ToString("N0") ?? "0") VND</strong></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr onclick="location.href='@Url.Action("Details", "HoaDon", new { id = item.MaHD })'">
+                <td>@item.MaHD</td>
+                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @(item.UserId == null ? "Khách lẻ" : item.TenNguoiNhan)
+                </td>
+                <td>
+                    <span class="status-label status-@item.TrangThai">
+                        @switch (item.TrangThai)
+                        {
+                            case 0:
+                                <text>Chờ xác nhận</text>
+                                break;
+                            case 1:
+                                <text>Đang đóng hàng</text>
+                                break;
+                            case 2:
+                                <text>Đang giao hàng</text>
+                                break;
+                            case 3:
+                                <text>Giao hàng thành công</text>
+                                break;
+                            default:
+                                <text>Không xác định</text>
+                                break;
+                        }
+                    </span>
+                </td>
+                <td>@(item.TongTien?.ToString("N0") ?? "0") VND</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-3">
+    <strong>Tổng tiền tất cả hóa đơn:</strong> @(tongTienTatCa?.ToString("N0") ?? "0") VND
+</div>
+
+<div class="pagination-container">
+    @Html.PagedListPager((IPagedList)Model, page => "javascript:void(0);", new PagedListRenderOptions
+{
+    LiElementClasses = new[] { "page-item" },
+    PageClasses = new[] { "page-link" },
+    LinkToPreviousPageFormat = "←",
+    LinkToNextPageFormat = "→",
+    MaximumPageNumbersToDisplay = 5
+})
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".pagination a").each(function () {
+            var page = $(this).text().trim();
+            $(this).attr("data-page", page);
+        });
+    });
+</script>

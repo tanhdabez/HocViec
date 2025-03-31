@@ -1,15 +1,12 @@
 ﻿using Core.Request;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infrastructure.Models;
 
 namespace Core.Services.Interfaces
 {
     public interface ICheckoutService
     {
-        Task<bool> CheckoutAsync(CheckoutRequest request);
-        Task<CheckoutRequest?> GetHoaDonById(Guid Id);
+        Task<GioHangDto> GetSanPhamsByIdsAsync(List<CheckOutDetailsDto> cartItems);
+        Task<bool> CreateHoaDonAsync(CheckOutRequest request, Guid? userId);
+      
     }
 }

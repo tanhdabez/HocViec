@@ -37,9 +37,6 @@ namespace Infrastructure.Migrations
                     b.Property<Guid>("SanPhamId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -58,9 +55,6 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -129,9 +123,6 @@ namespace Infrastructure.Migrations
                     b.Property<int>("SoLuong")
                         .HasColumnType("int");
 
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -193,9 +184,6 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NhanVienId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int?>("PhuongThucThanhToan")
                         .HasColumnType("int");
 
@@ -208,8 +196,8 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("TongTien")
                         .HasColumnType("int");
 
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
+                    b.Property<int>("TrangThai")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");

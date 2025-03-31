@@ -42,7 +42,7 @@ namespace HocViec.Controllers
         {
             var result = await _cartService.AddToCart(productId, quantity);
 
-            if (result.Success)
+            if (result.Success || result.Warning)
             {
                 return Ok(result); // Trả về 200 OK với kết quả thành công
             }

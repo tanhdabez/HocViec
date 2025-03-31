@@ -395,6 +395,8 @@ C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\System.Security.P
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\af\Humanizer.resources.dll
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\ar\Humanizer.resources.dll
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -569,6 +571,7 @@ C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.GeneratedMSBu
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.AssemblyInfoInputs.cache
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.AssemblyInfo.cs
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.csproj.CoreCompileInputs.cache
+C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.RazorAssemblyInfo.cache
 C:\Users\F1sh\Desktop\HocViec\HocViec\HocViec\obj\Debug\net8.0\App.RazorAssemblyInfo.cs

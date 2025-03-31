@@ -11,6 +11,7 @@ namespace Infrastructure.Models
         public string? Mota { get; set; }
         public int SoLuong { get; set; }
         public int GiaBan { get; set; }
+        public bool TrangThai { get; set; }
         [ForeignKey("NhaCungCap")]
         public Guid NhaCungCapId { get; set; }
         [ForeignKey("DanhMucLoaiHang")]

@@ -7,10 +7,17 @@
             type: 'POST',
             data: { productId: productId, quantity: quantity },
             success: function (response) {
+                console.log(response);
                 if (response.success) {
                     toastr.success(response.message, "Thành công");
-                } else {
-                    toastr.error(response.message, "Lỗi");
+                    updateCartCount();
+                }
+                else if (response.warning) {
+                    toastr.error(response.message, "Cảnh Báo");
+                    updateCartCount();
+                }
+                else {
+                    toastr.warning(response.message, "Lỗi");
                 }
             },
             error: function (error) {
@@ -19,5 +26,4 @@
             }
         });
     });
-
 });

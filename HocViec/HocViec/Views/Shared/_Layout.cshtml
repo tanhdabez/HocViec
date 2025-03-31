@@ -28,7 +28,7 @@
                         <li class="nav-item">
                             <a class="nav-link me-2" asp-area="" asp-controller="Cart" asp-action="Index">
                                 <i class="bi bi-cart"></i>
-                                <span id="cart-count" class="badge bg-success">@* @CartService.GetTotalItems() *@</span>
+                                <span id="cart-count" class="badge bg-success"></span>
                             </a>
                         </li>
                         @if (Context.Session.GetString("Name") != null)
@@ -87,3 +87,22 @@
 </body>
 
 </html>
+<script>
+    function updateCartCount() { // Định nghĩa bên ngoài $(document).ready()
+        $.ajax({
+            url: '/Cart/GetCartData',
+            type: 'GET',
+            success: function (data) {
+                const uniqueProductCount = data.length;
+                $('#cart-count').text(uniqueProductCount);
+            },
+            error: function (error) {
+                console.error("Error fetching cart data:", error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        updateCartCount(); // Gọi khi trang tải
+    });
+</script>

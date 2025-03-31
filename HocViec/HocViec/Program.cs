@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 using Core.Constants;
 using Infrastructure;
 using Core.Mapper;
@@ -50,6 +49,13 @@ builder.Services.AddScoped<ICustomAuthenticationService, AuthenticationService>(
 
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
+
+builder.Services.AddScoped<ICheckoutService, CheckoutService>();
+builder.Services.AddScoped<IHoaDonRepository, HoaDonRepository>();
+
+builder.Services.AddScoped<IHoaDonService, HoaDonService>();
+
+
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 //Build

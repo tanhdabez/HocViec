@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/F1sh/Desktop/HocViec/HocViec/HocViec/Views/Checkout/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/F1sh/Desktop/HocViec/HocViec/HocViec/Views/DanhMucLoaiHang/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaE11Y0xvYWlIYW5nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +58,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/F1sh/Desktop/HocViec/HocViec/HocViec/Views/DanhMucLoaiHang/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaE11Y0xvYWlIYW5nXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/F1sh/Desktop/HocViec/HocViec/HocViec/Views/HoaDon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/F1sh/Desktop/HocViec/HocViec/HocViec/Views/HoaDon/_HoaDonPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXF9Ib2FEb25QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/F1sh/Desktop/HocViec/HocViec/HocViec/Views/Home/ChiTietSanPham_Home.cshtml]

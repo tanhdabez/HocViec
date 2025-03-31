@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $('#addToCartButton').off('click').on('click', function () {
+    $('#addToCartButton').on('click', function () {
         const productId = $(this).data('product-id');
         const quantity = parseInt($('#productQuantity').val());
         if (quantity <= 0) {
@@ -13,6 +13,11 @@
             success: function (response) {
                 if (response.success) {
                     toastr.success(response.message, "Thành công");
+                    updateCartCount();
+                }
+                else if (response.warning) {
+                    toastr.error(response.message, "Cảnh Báo");
+                    updateCartCount();
                 } else {
                     toastr.error(response.message, "Lỗi");
                 }
@@ -60,5 +65,4 @@
             toastr.error('Số lượng sản phẩm không thể nhỏ hơn 1.');
         }
     });
-
 });

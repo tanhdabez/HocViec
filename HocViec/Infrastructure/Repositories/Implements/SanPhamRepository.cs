@@ -15,7 +15,12 @@ namespace Infrastructure.Repositories.Implements
         }
         public async Task<List<SanPham>> GetAllAsync()
         {
-            return await _dbContext.SanPhams.ToListAsync();
+            return await _dbContext.SanPhams
+              .Include(sp => sp.NhaCungCap)
+              .Include(sp => sp.DanhMucLoaiHang)
+              .Include(sp => sp.AnhSanPhams)
+              .Where(sp => sp.TrangThai == true)
+              .ToListAsync();
         }
 
         public async Task<List<SanPham>> GetAllSanPhamsWithIncludesAsync()

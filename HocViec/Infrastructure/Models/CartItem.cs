@@ -7,6 +7,7 @@ namespace Infrastructure.Models
         public Guid CartId { get; set; }
         public Guid SanPhamId { get; set; }
         public int SoLuong { get; set; }
+        public bool TrangThai { get; set; }
         public virtual Cart? Cart { get; set; }
         public virtual SanPham? SanPham { get; set; }
     }

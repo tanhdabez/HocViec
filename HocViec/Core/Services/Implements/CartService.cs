@@ -5,6 +5,7 @@ using Infrastructure;
 using Infrastructure.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Core.Services.Implements
 {
@@ -23,106 +24,7 @@ namespace Core.Services.Implements
             _mapper = mapper;
             _sanPhamRepo = sanPhamRepo;
         }
-        //public List<CartItemRequest> GetCart()
-        //{
-        //    var cartCookie = _httpContextAccessor.HttpContext.Request.Cookies[_cartCookieName];
-        //    if (string.IsNullOrEmpty(cartCookie))
-        //    {
-        //        return new List<CartItemRequest>();
-        //    }
-        //    var cartItems = JsonConvert.DeserializeObject<List<CartItemRequest>>(cartCookie);
-        //    if (cartItems == null || cartItems.Count == 0)
-        //    {
-        //        return new List<CartItemRequest>();
-        //    }
-        //    var productIds = cartItems.Select(item => item.ProductId).ToList();
-        //    var products = _cartRepo.GetSanPhamsByIds(productIds);
-        //    foreach (var item in cartItems)
-        //    {
-        //        var product = products.FirstOrDefault(p => p.Id == item.ProductId);
 
-        //        if (product != null)
-        //        {
-        //            item.ProductName = product.Ten;
-        //            item.ProductCode = product.MaSanPham;
-        //            item.Price = product.GiaBan;
-        //            item.ImageUrl = product.AnhSanPhams?.FirstOrDefault()?.ImageUrl;
-        //            item.StockQuantity = product.SoLuong;
-        //        }
-        //    }
-        //    return cartItems;
-        //}
-
-
-        //public int GetTotalItems()
-        //{
-        //    var cart = GetCart();
-        //    return cart.Count();
-        //}
-
-        //public async Task<CartResult> AddToCart(Guid productId, int quantity)
-        //{
-        //    var cart = GetCart();
-        //    var existingItem = cart.FirstOrDefault(item => item.ProductId == productId);
-        //    var productInStock = await _dbContext.SanPhams.Where(x => x.Id == productId).Select(x => x.SoLuong).FirstOrDefaultAsync();
-        //    // Kiểm tra số lượng sản phẩm trong kho
-        //    if (productInStock <= 0)
-        //    {
-        //        return new CartResult { Success = false, Message = "Sản phẩm đã hết hàng." };
-        //    }
-        //    if (existingItem != null)
-        //    {
-        //        int totalQuantity = existingItem.Quantity + quantity;
-        //        if (totalQuantity > productInStock)
-        //        {
-        //            return new CartResult { Success = false, Message = $"Bạn đã có {existingItem.Quantity} sản phẩm trong giỏ hàng. Không thể thêm số lượng đã chọn vào giỏ hàng vì sẽ vượt quá giới hạn mua hàng của bạn." };
-        //        }
-        //        // Cập nhật số lượng sản phẩm trong giỏ hàng
-        //        existingItem.Quantity = totalQuantity;
-        //    }
-        //    else
-        //    {
-        //        // Kiểm tra xem số lượng thêm vào có vượt quá số lượng trong kho không
-        //        if (quantity > productInStock)
-        //        {
-        //            return new CartResult { Success = false, Message = $"Số lượng sản phẩm trong kho không đủ. Số lượng hiện còn: {productInStock}" };
-        //        }
-
-        //        // Thêm sản phẩm mới vào giỏ hàng
-        //        cart.Add(new CartItemRequest { ProductId = productId, Quantity = quantity });
-        //    }
-        //    SaveCart(cart);
-        //    return new CartResult { Success = true, Message = "Thêm sản phẩm vào giỏ hàng thành công." };
-
-        //}
-        //public void UpdateCartItem(Guid productId, int quantity)
-        //{
-        //    var cart = GetCart();
-        //    var item = cart.FirstOrDefault(item => item.ProductId == productId);
-        //    if (item != null)
-        //    {
-        //        item.Quantity = quantity;
-        //        SaveCart(cart);
-        //    }
-        //}
-        //public void RemoveFromCart(Guid productId)
-        //{
-        //    var cart = GetCart();
-        //    cart.RemoveAll(item => item.ProductId == productId);
-        //    SaveCart(cart);
-        //}
-        //public void ClearCart()
-        //{
-        //    SaveCart(new List<CartItemRequest>());
-        //}
-        //private void SaveCart(List<CartItemRequest> cart)
-        //{
-        //    var cartJson = JsonConvert.SerializeObject(cart);
-        //    _httpContextAccessor.HttpContext.Response.Cookies.Append(_cartCookieName, cartJson, new CookieOptions
-        //    {
-        //        Expires = System.DateTimeOffset.Now.AddDays(30) // Lưu trong 30 ngày
-        //    });
-        //}
         public List<CartItemRequest> GetCartFromCookie()
         {
             var cartCookie = _httpContextAccessor.HttpContext?.Request.Cookies[_cartCookieName];
@@ -138,6 +40,7 @@ namespace Core.Services.Implements
             var cartJson = JsonSerializer.Serialize(cartItems);
             _httpContextAccessor.HttpContext?.Response.Cookies.Append(_cartCookieName, cartJson);
         }
+
         public async Task<List<CartItemRequest>> GetCart(Guid? userId = null)
         {
             if (userId.HasValue)
@@ -175,6 +78,23 @@ namespace Core.Services.Implements
                 return cartItemsWithProductInfo;
             }
         }
+
+        public async Task<int> GetTotalItems()
+        {
+            var cart = await GetCart(); 
+
+            if (cart == null || !cart.Any())
+            {
+                return 0;
+            }
+            var uniqueProductIds = new HashSet<Guid>();
+            foreach (var item in cart)
+            {
+                uniqueProductIds.Add(item.ProductId);
+            }
+            return uniqueProductIds.Count;
+        }
+
         public async Task<CartResult> AddToCart(Guid productId, int quantity)
         {
             var userIdString = _httpContextAccessor.HttpContext?.Session.GetString("UserId");
@@ -186,9 +106,14 @@ namespace Core.Services.Implements
                 var existingItem = cartItems.FirstOrDefault(ci => ci.ProductId == productId);
 
                 var product = await _sanPhamRepo.GetByIdAsync(productId);
-                if (product == null)
+                if (product?.SoLuong < quantity)
+                    return new() { Warning = true, Message = product == null ? "Sản phẩm không tồn tại." : "Số lượng không đủ." };
+                int currentQuantity = existingItem != null ? existingItem.Quantity : 0;
+                int totalQuantity = currentQuantity + quantity;
+
+                if (product.SoLuong < totalQuantity)
                 {
-                    return new() { Success = false, Message = "Sản phẩm không tồn tại." };
+                    return new() { Warning = true, Message = $"Bạn đã có {currentQuantity} sản phẩm trong giỏ hàng. Không thể thêm {quantity} sản phẩm vì sẽ vượt quá giới hạn mua hàng của bạn." };
                 }
 
                 if (existingItem != null)
@@ -213,11 +138,17 @@ namespace Core.Services.Implements
             // Xử lý giỏ hàng cho người dùng đã đăng nhập
             var productForUser = await _sanPhamRepo.GetByIdAsync(productId);
             if (productForUser?.SoLuong < quantity)
-                return new() { Success = false, Message = productForUser == null ? "Sản phẩm không tồn tại." : "Số lượng không đủ." };
+                return new() { Warning = true, Message = productForUser == null ? "Sản phẩm không tồn tại." : "Số lượng không đủ." };
 
             var cart = await _cartRepo.GetCartByUserIdAsync(userId) ?? await _cartRepo.CreateCartAsync(userId);
             var cartItem = cart.CartItems?.FirstOrDefault(ci => ci.SanPhamId == productId);
+            int currentQuantityForUser = cartItem != null ? cartItem.SoLuong : 0;
+            int totalQuantityForUser = currentQuantityForUser + quantity;
 
+            if (productForUser.SoLuong < totalQuantityForUser)
+            {
+                return new() { Warning = true, Message = $"Bạn đã có {currentQuantityForUser} sản phẩm trong giỏ hàng. Không thể thêm {quantity} sản phẩm vì sẽ vượt quá giới hạn mua hàng của bạn." };
+            }
             if (cartItem != null) cartItem.SoLuong += quantity;
             else await _cartRepo.AddCartItemAsync(new() { CartId = cart.Id, SanPhamId = productId, SoLuong = quantity });
 

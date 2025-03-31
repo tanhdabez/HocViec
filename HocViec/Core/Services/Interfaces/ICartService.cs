@@ -10,9 +10,11 @@ namespace Core.Services.Interfaces
 {
     public interface ICartService
     {
+        List<CartItemRequest> GetCartFromCookie();
+        public void SetCartToCookie(List<CartItemRequest> cartItems);
         Task<List<CartItemRequest>> GetCart(Guid? userId = null);
         Task<CartResult> AddToCart(Guid productId, int quantity);
-        //int GetTotalItems();
+        Task<int> GetTotalItems();
         Task<CartResult> UpdateCartItem(Guid productId, int quantity);
         Task<CartResult> RemoveFromCart(Guid productId);
         Task<CartResult> ClearCart();

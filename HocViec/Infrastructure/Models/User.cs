@@ -16,6 +16,7 @@ namespace Infrastructure.Models
         public string? SDT { get; set; }
         [StringLength(200, ErrorMessage = "Địa chỉ không được vượt quá 200 ký tự")]
         public string? DiaChi { get; set; }
+        public bool TrangThai { get; set; }
         public EnumRole VaiTro { get; set; }
     }
 }

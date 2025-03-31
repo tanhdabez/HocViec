@@ -13,8 +13,9 @@ namespace Infrastructure.Models
         public int? TongTien { get; set; }
         public int? PhuongThucThanhToan { get; set; }
         public string? GhiChu { get; set; }
-        [ForeignKey("NhanVien")]
-        public Guid NhanVienId { get; set; }
+        public int TrangThai { get; set; }
+        [ForeignKey("User")]
+        public Guid? UserId { get; set; }
         public virtual User? User { get; set; }
         public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; }
     }

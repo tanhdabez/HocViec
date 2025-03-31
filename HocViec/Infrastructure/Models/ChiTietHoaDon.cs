@@ -14,5 +14,6 @@ namespace Infrastructure.Models
         public Guid HoaDonId { get; set; }
         public virtual SanPham? SanPham { get; set; }
         public virtual HoaDon? HoaDon { get; set; }
+
     }
 }

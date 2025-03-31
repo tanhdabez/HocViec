@@ -1,0 +1,96 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Core.Request.HoaDonResponse>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var tongTienTatCa = ViewBag.TongTienTatCa as decimal? ?? Model.Sum(x => x.TongTien);
+}
+<style>
+    .pagination-container {
+        margin-top: 20px;
+    }
+
+        .pagination-container ul.pagination {
+            justify-content: center;
+        }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .page-link {
+        color: #007bff;
+    }
+</style>
+<div class="container mt-4">
+    <h2 class="mb-4">Hóa Đơn</h2>
+
+    <form id="filterForm">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="startDate" class="form-label">Bắt đầu</label>
+                <input type="date" class="form-control" name="startDate" id="startDate">
+            </div>
+            <div class="col-md-3">
+                <label for="endDate" class="form-label">Kết thúc</label>
+                <input type="date" class="form-control" name="endDate" id="endDate">
+            </div>
+            <div class="col-md-3">
+                <label for="trangThai" class="form-label">Trạng thái</label>
+                <select class="form-select" name="trangThai" id="trangThai">
+                    <option value="">Tất cả</option>
+                    <option value="0">Chờ xác nhận</option>
+                    <option value="1">Đang đóng hàng</option>
+                    <option value="2">Đang giao hàng</option>
+                    <option value="3">Giao hàng thành công</option>
+                </select>
+            </div>
+            <div class="col-md-3 align-self-end">
+                <button type="button" id="btnFilter" class="btn btn-primary">Lọc</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Div chứa danh sách hóa đơn -->
+    <div id="hoaDonContainer">
+        @Html.Partial("_HoaDonPartial", Model)
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+            // Xử lý khi nhấn nút lọc
+            $("#btnFilter").click(function () {
+                loadHoaDon(1); // Mặc định load trang 1 khi lọc
+            });
+
+            // Xử lý khi bấm phân trang
+            $(document).on("click", ".pagination a", function (event) {
+                event.preventDefault();
+                var page = $(this).attr("data-page");
+                loadHoaDon(page);
+            });
+
+            function loadHoaDon(page) {
+                var formData = $("#filterForm").serialize(); // Lấy dữ liệu form
+
+                $.ajax({
+                    url: "/HoaDon/AjaxPagination?page=" + page,
+                    type: "GET",
+                    data: formData,
+                    success: function (result) {
+                        $("#hoaDonContainer").html(result); // Cập nhật dữ liệu vào div
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        });
+    </script>
+    }
