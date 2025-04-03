@@ -3,6 +3,7 @@ using Core.Request;
 using Core.Services.Interfaces;
 using Infrastructure.Models;
 using Infrastructure.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services.Implements
 {
@@ -17,21 +18,76 @@ namespace Core.Services.Implements
             _mapper = mapper;
             _sanPhamRepository = sanPhamRepository;
         }
-        public async Task<List<HoaDonResponse>> GetAllHoaDonAsync(DateTime? startDate, DateTime? endDate, int? trangThai)
+        public async Task<PaginationResponse<HoaDonResponse>> GetAllHoaDonAsync(FilterRequest filter)
         {
-            var hoaDons = await _hoaDonRepository.GetAllHoaDons(startDate, endDate, trangThai);
-            return _mapper.Map<List<HoaDonResponse>>(hoaDons);
+            if (filter.StartDate == null || filter.EndDate == null)
+            {
+                filter.StartDate = DateTime.Today.AddDays(-7);
+                filter.EndDate = DateTime.Today;
+            }
+            var hoaDons = _hoaDonRepository.GetAllHoaDons(filter.StartDate, filter.EndDate, filter.TrangThai, filter.MaHD);
+            var totalItems = await hoaDons.CountAsync();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)filter.PageSize);
+            var data = await hoaDons.Skip((filter.PageNumber - 1) * filter.PageSize).Take(filter.PageSize).ToListAsync();
+            var mappedData = _mapper.Map<List<HoaDonResponse>>(data);
+
+            return new PaginationResponse<HoaDonResponse>
+            {
+                Data = mappedData,
+                TotalItems = totalItems,
+                TotalPages = totalPages
+            };
         }
 
-        public async Task<HoaDon> UpdateHoaDonAsync(HoaDon hoaDon)
+        public async Task<HoaDonResponse> GetHoaDonChiTietAsync(Guid id)
         {
-            return await _hoaDonRepository.UpdateHoaDon(hoaDon);
+            var hoaDon = await _hoaDonRepository.GetHoaDon(id);
+            if (hoaDon == null) return null;
+
+            var chiTietHoaDons = await _hoaDonRepository.GetChiTietHoaDon(id);
+            if (chiTietHoaDons == null) return null;
+
+            var chiTietSanPhamDTOs = chiTietHoaDons.Select(ct => new ChiTietSanPhamResponse
+            {
+                MaSanPham = ct.SanPham.MaSanPham,
+                TenSanPham = ct.SanPham.Ten,
+                SoLuong = ct.SoLuong,
+                DonGia = ct.DonGia,
+                ThanhTien = ct.DonGia * ct.SoLuong
+            }).ToList();
+
+            var hoaDonChiTietDTO = new HoaDonResponse
+            {
+                Id = hoaDon.Id,
+                MaHD = hoaDon.MaHD,
+                TenNguoiNhan = hoaDon.TenNguoiNhan,
+                SDT = hoaDon.SDT,
+                Email = hoaDon.Email,
+                DiaChi = hoaDon.DiaChi,
+                TongTien = hoaDon.TongTien,
+                PhuongThucThanhToan = hoaDon.PhuongThucThanhToan,
+                GhiChu = hoaDon.GhiChu,
+                TrangThai = hoaDon.TrangThai,
+                UserId = hoaDon.UserId,
+                TenKhachHang = hoaDon.User?.Ten ?? "Khách lẻ",
+                CreatedDate = hoaDon.CreatedDate,
+                UpdatedDate = hoaDon.UpdatedDate,
+                ChiTietSanPhams = chiTietSanPhamDTOs
+            };
+
+            return hoaDonChiTietDTO;
         }
 
-
-        public async Task<List<ChiTietHoaDon>> GetChiTietHoaDonsByHoaDonIdAsync(Guid hoaDonId)
+        public async Task<bool> UpdateHoaDonAsync(Guid hoaDonId, int trangThai, string ghiChu)
         {
-            return await _hoaDonRepository.GetChiTietHoaDonsByHoaDonId(hoaDonId);
+            var hoaDon = await _hoaDonRepository.GetHoaDon(hoaDonId);
+
+            hoaDon.TrangThai = trangThai;
+            hoaDon.GhiChu = ghiChu;
+            hoaDon.UpdatedDate = DateTime.Now;
+
+            var result = await _hoaDonRepository.UpdateHoaDon(hoaDon);
+            return true;
         }
     }
 }

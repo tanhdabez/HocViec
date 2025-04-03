@@ -252,3 +252,29 @@ main {
     margin: 0 0 0 10px; /* Thêm margin bên trái để tạo khoảng cách */
     line-height: 1; /* Đảm bảo dòng văn bản không bị giãn cách thừa */
 }
+#sidebar {
+    height: 100vh;
+    border-right: 1px solid #dee2e6;
+    padding-top: 56px; /* Adjust padding to match header height */
+}
+
+    #sidebar .nav-link {
+        padding: 1rem;
+        font-weight: 500;
+    }
+
+        #sidebar .nav-link.active {
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+/* Main Content Styles */
+main {
+    padding-top: 56px; /* Adjust padding to match header height */
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}

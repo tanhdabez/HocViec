@@ -13,29 +13,29 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <style>
         .product-image {
-            max-width: 80px;
-            max-height: 80px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
         }
 
-            .product-image:hover {
-                transform: scale(1.1);
-            }
+        .product-image:hover {
+        transform: scale(1.1);
+        }
 
         .action-buttons .btn {
-            margin: 2px;
+        margin: 2px;
         }
 
         .status-active {
-            color: #28a745;
-            font-weight: bold;
+        color: #28a745;
+        font-weight: bold;
         }
 
         .status-inactive {
-            color: #dc3545;
-            font-weight: bold;
+        color: #dc3545;
+        font-weight: bold;
         }
     </style>
 </head>
@@ -107,9 +107,18 @@
                                         <a asp-action="GetById" asp-route-id="@item.Id" class="btn btn-sm btn-info">
                                             <i class="bi bi-eye"></i> Xem
                                         </a>
-                                        <a asp-action="UpdateStatus" asp-route-id="@item.Id" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn đổi trạng thái sản phẩm này không?');">
-                                            <i class="bi bi-trash"></i> Xóa
-                                        </a>
+                                        @if (!item.TrangThai)
+                                        {
+                                            <a asp-action="UpdateStatus" asp-route-id="@item.Id" class="btn btn-sm btn-success undo-btn" data-id="@item.Id">
+                                                <i class="bi bi-arrow-counterclockwise"></i> Hoàn tác
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="UpdateStatus" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </a>
+                                        }
                                     </td>
                                 </tr>
                                 stt++;

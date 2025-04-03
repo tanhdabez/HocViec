@@ -109,7 +109,6 @@ namespace Infrastructure.Repositories.Implements
             {
                 entity.TrangThai = !entity.TrangThai;
                 entity.UpdatedDate = DateTime.Now;
-
                 await _dbContext.SaveChangesAsync();
                 return true;
             }

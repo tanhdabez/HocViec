@@ -8,8 +8,8 @@ namespace Infrastructure.Repositories.Interfaces
         Task<int> GetTotalCount();
         Task<HoaDon> CreateHoaDon(HoaDon hoaDon);
         Task<HoaDon?> GetHoaDon(Guid hoaDonId);
-        Task<HoaDon> UpdateHoaDon(HoaDon hoaDon);
-        Task<List<HoaDon>> GetAllHoaDons(DateTime? startDate, DateTime? endDate, int? trangThai);
+        Task<bool> UpdateHoaDon(HoaDon hoaDon);
+        public IQueryable<HoaDon> GetAllHoaDons(DateTime? startDate, DateTime? endDate, int? trangThai, string? maHD);
         //Order detail
         Task CreateChiTietHoaDon(List<ChiTietHoaDon> chiTietHoaDon);
         Task<List<ChiTietHoaDon?>> GetChiTietHoaDon(Guid idHoaDon);

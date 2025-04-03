@@ -5,8 +5,8 @@ namespace Core.Services.Interfaces
 {
     public interface IHoaDonService
     {
-        Task<List<HoaDonResponse>> GetAllHoaDonAsync(DateTime? startDate, DateTime? endDate, int? trangThai);
-        Task<HoaDon> UpdateHoaDonAsync(HoaDon hoaDon);
-        Task<List<ChiTietHoaDon>> GetChiTietHoaDonsByHoaDonIdAsync(Guid hoaDonId);
+        Task<PaginationResponse<HoaDonResponse>> GetAllHoaDonAsync(FilterRequest filter);
+        Task<bool> UpdateHoaDonAsync(Guid hoaDonId, int trangThai, string ghiChu);
+        Task<HoaDonResponse> GetHoaDonChiTietAsync(Guid id);
     }
 }

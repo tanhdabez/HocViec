@@ -23,11 +23,29 @@ namespace Infrastructure.Repositories.Implements
             return await _context.HoaDons.FirstOrDefaultAsync(x => x.Id == hoaDonId);
         }
 
-        public async Task<HoaDon> UpdateHoaDon(HoaDon hoaDon)
+        public async Task<bool> UpdateHoaDon(HoaDon hoaDon)
         {
+            var dataHoaDon = await _context.HoaDons.FirstOrDefaultAsync(x => x.Id == hoaDon.Id);
+            var dataCTHoaDon = await _context.ChiTietHoaDons.Where(x => x.HoaDonId == hoaDon.Id).ToListAsync(); // Lấy toàn bộ ChiTietHoaDon
+
+            if (hoaDon.TrangThai == 1)
+            {
+                foreach (var chiTiet in dataCTHoaDon)
+                {
+                    var sanPham = await _context.SanPhams.FindAsync(chiTiet.SanPhamId);
+
+                    if (sanPham != null)
+                    {
+                        sanPham.SoLuong -= chiTiet.SoLuong;
+
+                        _context.SanPhams.Update(sanPham);
+                    }
+                }
+              
+            }
             _context.HoaDons.Update(hoaDon);
             await _context.SaveChangesAsync();
-            return hoaDon;
+            return true;
         }
 
         public async Task<int> GetTotalCount()
@@ -35,7 +53,7 @@ namespace Infrastructure.Repositories.Implements
             return await _context.HoaDons.CountAsync();
         }
 
-        public async Task<List<HoaDon>> GetAllHoaDons(DateTime? startDate, DateTime? endDate, int? trangThai)
+        public IQueryable<HoaDon> GetAllHoaDons(DateTime? startDate, DateTime? endDate, int? trangThai, string? maHD)
         {
             var query = _context.HoaDons.AsQueryable();
 
@@ -48,19 +66,22 @@ namespace Infrastructure.Repositories.Implements
             if (trangThai.HasValue)
                 query = query.Where(x => x.TrangThai == trangThai.Value);
 
-            return await query.OrderByDescending(x => x.CreatedDate).ToListAsync();
+            if (!string.IsNullOrEmpty(maHD))
+                query = query.Where(x => x.MaHD.ToLower().Contains(maHD.ToLower()));
+
+            return query.OrderByDescending(x => x.CreatedDate);
         }
         public async Task<List<ChiTietHoaDon?>> GetChiTietHoaDon(Guid idHoaDon)
         {
             var chiTietHoaDons = await _context.ChiTietHoaDons
             .Where(x => x.HoaDonId == idHoaDon)
-            .Include(x => x.SanPham) 
-            .AsNoTracking() // Nếu chỉ đọc dữ liệu
+            .Include(x => x.SanPham)
+            .AsNoTracking()
             .ToListAsync();
 
             if (chiTietHoaDons == null || chiTietHoaDons.Count == 0)
             {
-                return null; // Hoặc ném ngoại lệ, trả về thông báo lỗi
+                return null;
             }
 
             return chiTietHoaDons;
@@ -70,19 +91,10 @@ namespace Infrastructure.Repositories.Implements
         public async Task CreateChiTietHoaDon(List<ChiTietHoaDon> chiTietHoaDon)
         {
             _context.ChiTietHoaDons.AddRange(chiTietHoaDon);
-            foreach (var item in chiTietHoaDon)
-            {
-                var sanPham = await _context.SanPhams.FindAsync(item.SanPhamId);
-                sanPham.SoLuong -= item.SoLuong;
-                if (sanPham.SoLuong == 0)
-                {
-                    sanPham.TrangThai = false;
-                }
-            }
             await _context.SaveChangesAsync();
         }
 
-       
+
         public async Task<List<ChiTietHoaDon>> GetChiTietHoaDonsByHoaDonId(Guid hoaDonId)
         {
             return await _context.ChiTietHoaDons.Where(ct => ct.HoaDonId == hoaDonId).ToListAsync();

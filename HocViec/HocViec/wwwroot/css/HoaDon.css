@@ -1,48 +1,55 @@
-﻿.table thead th {
-    text-transform: uppercase;
-    font-size: 14px;
+﻿.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
 }
-
-.table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-.badge {
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-.total-row {
-    font-weight: bold;
-    background-color: #e9ecef;
-}
-
-.status-label {
+.table-status-0 {
+    background-color: #d6d6d6; /* Màu xám */
+    color: black;
     padding: 5px 10px;
     border-radius: 5px;
-    color: white; /* Màu chữ trắng để dễ đọc trên nền màu */
+    display: inline-block;
 }
 
+.table-status-1 {
+    background-color: #ffeb99; /* Màu vàng */
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.table-status-2 {
+    background-color: #007bff; /* Màu xanh nước biển */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.table-status-3 {
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/*Màu cho trạng thái popup*/
 .status-0 {
-    background-color: gray;
+    color: #3399ff;
 }
 
 .status-1 {
-    background-color: yellow;
-    color: black; /* Màu chữ đen để dễ đọc trên nền vàng */
+    color: #3399ff;
 }
 
 .status-2 {
-    background-color: blue;
+    color: #3399ff;
 }
 
 .status-3 {
-    background-color: green;
+    color: #3399ff;
 }
-
-.status-default {
-    background-color: red; /* Màu đỏ cho trạng thái không xác định */
-}
-.table tbody tr {
-    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua dòng */
+.hoa-don-row {
+    cursor: pointer;
 }
