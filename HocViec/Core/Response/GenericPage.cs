@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Request
+namespace Core.Response
 {
     public abstract class GenericPage
     {
