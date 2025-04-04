@@ -13,11 +13,13 @@ namespace HocViec.Controllers
     {
         private readonly ILogger<UserController> _logger;
         private readonly IUserService _UserService;
+
         public UserController(ILogger<UserController> logger, IUserService UserService)
         {
             _logger = logger;
             _UserService = UserService;
         }
+
         [HttpGet("User")]
         public async Task<IActionResult> Index()
         {
@@ -32,6 +34,7 @@ namespace HocViec.Controllers
                 return Ok(e.Message);
             }
         }
+
         [HttpGet("User/ChiTietUser")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -46,12 +49,14 @@ namespace HocViec.Controllers
                 return Ok(e.Message);
             }
         }
+ 
         [HttpGet("User/Create")]
         public IActionResult Create()
         {
             ViewBagData();
             return View();
         }
+
         [HttpPost("User/Create")]
         public async Task<IActionResult> Create(CreateUserRequest request)
         {
@@ -72,6 +77,7 @@ namespace HocViec.Controllers
                 return View(request);
             }
         }
+
         [HttpGet("User/Update")]
         public async Task<IActionResult> Update(Guid id)
         {
@@ -87,6 +93,7 @@ namespace HocViec.Controllers
                 return Ok(e.Message);
             }
         }
+
         [HttpPost("User/Update")]
         public async Task<IActionResult> Update(UserResponse request)
         {
@@ -107,6 +114,7 @@ namespace HocViec.Controllers
                 return View(request);
             }
         }
+
         [HttpGet("User/Remove")]
         public async Task<IActionResult> UpdateStatus(Guid id)
         {
@@ -128,6 +136,7 @@ namespace HocViec.Controllers
                 return View();
             }
         }
+
         private void ViewBagData()
         {
             ViewBag.VaiTroList = new SelectList(Enum.GetValues(typeof(EnumRole)));

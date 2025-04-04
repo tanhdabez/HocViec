@@ -69,7 +69,7 @@ namespace Core.Services.Implements
                 GhiChu = hoaDon.GhiChu,
                 TrangThai = hoaDon.TrangThai,
                 UserId = hoaDon.UserId,
-                TenKhachHang = hoaDon.User?.Ten ?? "Khách lẻ",
+                TenKhachHang = hoaDon.TenNguoiNhan,
                 CreatedDate = hoaDon.CreatedDate,
                 UpdatedDate = hoaDon.UpdatedDate,
                 ChiTietSanPhams = chiTietSanPhamDTOs
@@ -84,8 +84,11 @@ namespace Core.Services.Implements
 
             hoaDon.TrangThai = trangThai;
             hoaDon.GhiChu = ghiChu;
-            hoaDon.UpdatedDate = DateTime.Now;
+            if (trangThai == 3)
+            {
+                hoaDon.UpdatedDate = DateTime.Now;
 
+            }
             var result = await _hoaDonRepository.UpdateHoaDon(hoaDon);
             return true;
         }

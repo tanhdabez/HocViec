@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Infrastructure.Models.HoaDon>
+
+<h2>Danh sách hóa đơn của bạn</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Hóa Đơn</th>
+            <th>Ngày Tạo</th>
+            <th>Tổng Tiền</th>
+            <th>Trạng Thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hoaDon in Model)
+        {
+            <tr style="cursor: pointer;" onclick="location.href='/DonHang/ChiTiet/@hoaDon.Id'">
+                <td><strong>@hoaDon.MaHD</strong></td>
+                <td>@hoaDon.CreatedDate.ToString("dd/MM/yyyy")</td>
+                <td>@hoaDon.TongTien?.ToString("N0") VND</td>
+                <td>
+                    @switch (hoaDon.TrangThai)
+                    {
+                        case 0:
+                            <span class="badge bg-secondary">Đang xử lý</span>
+                            break;
+                        case 1:
+                            <span class="badge bg-warning text-dark">Đang đóng hàng</span>
+                            break;
+                        case 2:
+                            <span class="badge bg-info text-dark">Đang giao hàng</span>
+                            break;
+                        case 3:
+                            <span class="badge bg-success">Giao thành công</span>
+                            break;
+                        default:
+                            <span class="badge bg-dark">Không xác định</span>
+                            break;
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>

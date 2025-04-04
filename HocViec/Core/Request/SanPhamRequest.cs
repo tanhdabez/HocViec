@@ -15,7 +15,7 @@ namespace Core.Request
         public Guid NhaCungCapId { get; set; }
         public Guid DanhMucSanPhamId { get; set; }
         public List<IFormFile>? Images { get; set; }
-        public DateTime UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
     }
     public class SanPhamResponse
     {
@@ -32,6 +32,6 @@ namespace Core.Request
         public string? TenDanhMucSanPham { get; set; }
         public List<string>? AnhSanPhams { get; set; }
         public List<IFormFile>? Images { get; set; }
-        public DateTime UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
     }
 }

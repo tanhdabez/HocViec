@@ -45,6 +45,14 @@ namespace Core.Mapper
             CreateMap<HoaDon, HoaDonResponse>();
             CreateMap<HoaDonResponse, HoaDon>();
 
+            CreateMap<CartItem, CartItemRequest>()
+                 .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.SanPhamId))
+             .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.SoLuong))
+             .ForMember(dest => dest.StockQuantity, opt => opt.MapFrom(src => src.SanPham.SoLuong))
+             .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.SanPham.AnhSanPhams.FirstOrDefault().ImageUrl))
+             .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.SanPham.Ten))
+             .ForMember(dest => dest.ProductCode, opt => opt.MapFrom(src => src.SanPham.MaSanPham))
+             .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.SanPham.GiaBan));
         }
     }
 }

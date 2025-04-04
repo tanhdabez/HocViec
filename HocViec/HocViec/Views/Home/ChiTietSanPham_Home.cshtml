@@ -51,8 +51,8 @@
                 <p><strong>Mã sản phẩm:</strong> @Model.MaSanPham</p>
                 <p>
                     <strong>Trạng thái:</strong>
-                    <span class="@(Model.TrangThai ? "text-success" : "text-danger")">
-                        @(Model.TrangThai ? "Còn Hàng" : "Hết Hàng")
+                    <span class="@(!Model.TrangThai ? "text-danger" : Model.SoLuong == 0 ? "text-danger" : "text-success")">
+                        @(!Model.TrangThai ? "Không còn bán" : Model.SoLuong == 0 ? "Hết Hàng" : "Còn Hàng")
                     </span>
                 </p>
                 <p><strong>Nhà cung cấp:</strong> @Model.TenNhaCungCap</p>

@@ -1,4 +1,5 @@
-﻿using Core.Services.Interfaces;
+﻿using Core.Services.Implements;
+using Core.Services.Interfaces;
 using HocViec.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -9,10 +10,13 @@ namespace HocViec.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ISanPhamService _sanPhamService;
-        public HomeController(ILogger<HomeController> logger, ISanPhamService sanPhamService)
+        private readonly IUserService _userService;
+
+        public HomeController(ILogger<HomeController> logger, ISanPhamService sanPhamService, IUserService userService)
         {
             _logger = logger;
             _sanPhamService = sanPhamService;
+            _userService = userService;
         }
         public async Task<IActionResult> Index()
         {
@@ -37,6 +41,29 @@ namespace HocViec.Controllers
             var sanPhams = await _sanPhamService.GetSanPhamById(id);
             return View(sanPhams);
         }
+
+        [HttpGet("/DonHang")]
+        public async Task<IActionResult> HoaDonByUser()
+        {
+            var userIdString = HttpContext.Session.GetString("UserId");
+
+            if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out var userId))
+            {
+                return RedirectToAction("Login", "Authentication");
+            }
+
+            var hoaDons = await _userService.GetHoaDonsByUserAsync(userId);
+            return View(hoaDons);
+        }
+
+        [HttpGet("DonHang/ChiTiet/{id}")]
+        public async Task<IActionResult> ChiTietHoaDonByUser(Guid id)
+        {
+            var chiTietHoaDons = await _userService.GetChiTietHoaDonsByHoaDonIdAsync(id);
+            return View(chiTietHoaDons);
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

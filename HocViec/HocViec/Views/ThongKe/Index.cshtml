@@ -1,0 +1,116 @@
+﻿@model Core.Request.ThongKeRequest
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 class="mt-4">Thống Kê</h2>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label for="startDate">Từ ngày</label>
+            <input type="date" id="startDate" name="startDate" class="form-control" value="@Model.StartDate.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="col-md-4">
+            <label for="endDate">Đến ngày</label>
+            <input type="date" id="endDate" name="endDate" class="form-control" value="@Model.EndDate.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+            <button id="filterButton" class="btn btn-primary mt-2">Lọc</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Số lượng hàng bán ra</h5>
+                    <h3>@Model.SoLuongHangBan</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Số lượng hàng còn lại</h5>
+                    <h3>@Model.SoLuongHangConLai</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Số lượng hoá đơn</h5>
+                    <h3>@Model.SoLuongHoaDon</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Phần biểu đồ -->
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <canvas id="chartDoanhThu"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="chartTrangThaiHoaDon"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Sự kiện filter
+            $('#filterButton').click(function () {
+                let startDate = $('#startDate').val();
+                let endDate = $('#endDate').val();
+                let url = '@Url.Action("Index", "ThongKe")' + '?startDate=' + startDate + '&endDate=' + endDate;
+                window.location.href = url;
+            });
+
+            // Vẽ biểu đồ demo
+            let ctxDoanhThu = document.getElementById('chartDoanhThu').getContext('2d');
+            let chartDoanhThu = new Chart(ctxDoanhThu, {
+                type: 'bar',
+                data: {
+                    labels: ['Hàng bán', 'Hàng còn lại', 'Hoá đơn'],
+                    datasets: [{
+                        label: 'Số lượng',
+                        data: [@Model.SoLuongHangBan, @Model.SoLuongHangConLai, @Model.SoLuongHoaDon],
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            let ctxTrangThai = document.getElementById('chartTrangThaiHoaDon').getContext('2d');
+            let chartTrangThai = new Chart(ctxTrangThai, {
+                type: 'pie',
+                data: {
+                    labels: ['Thành công', 'Hoàn trả', 'Đang giao'],
+                    datasets: [{
+                        data: [12, 3, 5], // Giả sử demo
+                        backgroundColor: ['#00a65a', '#f56954', '#f39c12']
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        });
+    </script>
+}

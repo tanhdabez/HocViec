@@ -47,7 +47,7 @@ namespace YourNamespace.Controllers
             try
             {
                 var hoaDon = await _checkoutService.CreateHoaDonAsync(request, userId);
-                return RedirectToAction("Success", "Authentication"); // Hoặc trang thành công khác
+                return RedirectToAction("OrderSuccess", "CheckOut"); // Hoặc trang thành công khác
             }
             catch (Exception)
             {
@@ -56,9 +56,8 @@ namespace YourNamespace.Controllers
         }
 
         // Trang thông báo đặt hàng thành công
-        public IActionResult OrderSuccess(Guid id)
+        public IActionResult OrderSuccess()
         {
-            ViewBag.HoaDonId = id;
             return View();
         }
     }

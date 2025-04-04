@@ -66,6 +66,8 @@ namespace Core.Services.Implements
                 GhiChu = request.GhiChu,
                 PhuongThucThanhToan = request.PhuongThucThanhToan,
                 UserId = userId,
+                CreatedDate = DateTime.Now,
+                UpdatedDate = null,
             };
 
             hoaDon = await _hoaDonRepository.CreateHoaDon(hoaDon);

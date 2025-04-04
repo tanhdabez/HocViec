@@ -40,7 +40,7 @@ namespace HocViec.Controllers
 
             if (result.Role == "Admin" || result.Role == "Employee")
             {
-                return RedirectToAction("Index", "SanPham");
+                return RedirectToAction("Index", "ThongKe");
             }
             else
             {
@@ -80,6 +80,12 @@ namespace HocViec.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
+        }
+
+        [Route("AccessDenied")]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

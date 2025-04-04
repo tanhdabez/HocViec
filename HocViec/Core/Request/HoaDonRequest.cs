@@ -28,7 +28,7 @@
         public Guid? UserId { get; set; }
         public string? TenKhachHang { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public List<ChiTietSanPhamResponse> ChiTietSanPhams { get; set; }
 
     }

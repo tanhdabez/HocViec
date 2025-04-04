@@ -37,6 +37,11 @@
         color: #dc3545;
         font-weight: bold;
         }
+
+        .status-out-of-stock {
+            color: #ff9421;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +83,11 @@
                                     <td class="text-center">@Html.DisplayFor(modelItem => item.SoLuong)</td>
                                     <td class="text-center">@item.GiaBan.ToString("N0") VND</td>
                                     <td class="text-center">
-                                        @if (item.TrangThai)
+                                        @if (item.TrangThai && item.SoLuong == 0)
+                                        {
+                                            <span class="status-out-of-stock">Hết hàng</span>
+                                        }
+                                        else if (item.TrangThai)
                                         {
                                             <span class="status-active">Hoạt động</span>
                                         }

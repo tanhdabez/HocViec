@@ -27,6 +27,24 @@ namespace Infrastructure.Repositories.Implements
             return await _dbContext.Users.FirstOrDefaultAsync(x=>x.Id == id) ?? throw new Exception("Không tồn tại");
         }
 
+        public async Task<IEnumerable<HoaDon>> GetHoaDonsByUserIdAsync(Guid userId)
+        {
+            return await _dbContext.HoaDons
+                .Where(h => h.UserId == userId)
+                .Include(h => h.ChiTietHoaDons)
+                    .ThenInclude(ct => ct.SanPham)
+                .ToListAsync();
+        }
+
+        public async Task<List<ChiTietHoaDon>> GetChiTietByHoaDonIdAsync(Guid hoaDonId)
+        {
+            return await _dbContext.ChiTietHoaDons
+                .Include(x => x.SanPham)
+                .ThenInclude(sp => sp.AnhSanPhams)
+                .Where(x => x.HoaDonId == hoaDonId)
+                .ToListAsync();
+        }
+
         public async Task<bool> AddAsync(User entity)
         {
             await _dbContext.AddAsync(entity);

@@ -9,19 +9,24 @@ using Infrastructure.Repositories.Interfaces;
 using Infrastructure.Repositories.Implements;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 var appSettingsSection = builder.Configuration.GetSection("Appsettings");
 builder.Services.Configure<AppSettings>(appSettingsSection);
 var appSettings = appSettingsSection.Get<AppSettings>();
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-// Thêm dịch vụ xác thực (Authentication)
+//Authentication & Authorization
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Login"; // Đường dẫn đến trang đăng nhập
-        options.AccessDeniedPath = "/Index"; // Đường dẫn đến trang từ chối truy cập
+        options.LoginPath = "/Login"; 
+        options.AccessDeniedPath = "/AccessDenied";
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); 
+        options.SlidingExpiration = true;
     });
 
 builder.Services.AddAuthorization();
@@ -30,7 +35,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(appSettings.ConnectionString));
 
 //services
-builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<DbContext, AppDbContext>();
 
 builder.Services.AddScoped<IUserService, UserService>();
@@ -55,6 +59,8 @@ builder.Services.AddScoped<IHoaDonRepository, HoaDonRepository>();
 
 builder.Services.AddScoped<IHoaDonService, HoaDonService>();
 
+builder.Services.AddScoped<IThongKeService, ThongKeService>();
+builder.Services.AddScoped<IThongKeRepository, ThongKeRepository>();
 
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
@@ -65,7 +71,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -74,9 +79,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseSession();
-
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

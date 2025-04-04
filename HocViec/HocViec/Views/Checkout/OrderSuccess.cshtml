@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Thanh toán thành công";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card p-4 shadow">
+                <i class="fas fa-check-circle text-success fa-4x mb-4"></i>
+                <h2 class="mb-4">Thanh toán thành công!</h2>
+                <p class="lead">Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được ghi nhận.</p>
+                <p>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+                <div class="mt-4">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg mr-2">Tiếp tục mua hàng</a>
+                    <a asp-controller="Home" asp-action="HoaDonByUser" class="btn btn-outline-primary btn-lg">Theo dõi đơn hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

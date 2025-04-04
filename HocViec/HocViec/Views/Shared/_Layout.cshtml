@@ -40,11 +40,11 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <button class="dropdown-item" type="button">
-                                            <i class="bi bi-person"></i> Thông tin
-                                            cá nhân
-                                        </button>
+                                        <a class="dropdown-item" asp-controller="Home" asp-action="HoaDonByUser">
+                                            <i class="bi bi-truck"></i>Đơn hàng đã đặt
+                                        </a>
                                     </li>
+
                                     @if (Context.Session.GetString("Role") == "Admin")
                                     {
                                         <li>

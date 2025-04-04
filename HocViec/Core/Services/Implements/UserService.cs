@@ -4,6 +4,7 @@ using Core.Request;
 using Core.Services.Interfaces;
 using Infrastructure;
 using Infrastructure.Models;
+using Infrastructure.Repositories.Implements;
 using Infrastructure.Repositories.Interfaces;
 
 namespace Core.Services.Implements
@@ -30,6 +31,16 @@ namespace Core.Services.Implements
         {
             var response = await _userRepo.GetByIdAsync(id);
             return _mapper.Map<UserResponse>(response);
+        }
+
+        public async Task<IEnumerable<HoaDon>> GetHoaDonsByUserAsync(Guid userId)
+        {
+            return await _userRepo.GetHoaDonsByUserIdAsync(userId);
+        }
+
+        public async Task<List<ChiTietHoaDon>> GetChiTietHoaDonsByHoaDonIdAsync(Guid hoaDonId)
+        {
+            return await _userRepo.GetChiTietByHoaDonIdAsync(hoaDonId);
         }
 
         public async Task<bool> AddUser(CreateUserRequest request)

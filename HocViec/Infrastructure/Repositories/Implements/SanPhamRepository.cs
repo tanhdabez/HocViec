@@ -67,24 +67,16 @@ namespace Infrastructure.Repositories.Implements
 
                 if (danhMuc == null)
                 {
-                    // Xử lý lỗi: Danh mục không tồn tại
-                    // Ví dụ: ném ngoại lệ, ghi log, trả về thông báo lỗi cho người dùng
                     throw new Exception($"Danh mục loại hàng với Id {entity.DanhMucSanPhamId} không tồn tại.");
                 }
-                await _dbContext.AddAsync(entity);
+                await _dbContext.SanPhams.AddAsync(entity);
                 await _dbContext.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)
             {
-                // Log lỗi tại đây
-                // Ví dụ: sử dụng ILogger<SanPhamRepository>
                 _logger.LogError(ex, "Lỗi khi thêm sản phẩm: {SanPhamId}", entity?.Id);
-
-                // Hoặc sử dụng Console.WriteLine (chỉ cho mục đích debug)
-                // Console.WriteLine($"Lỗi khi thêm sản phẩm: {ex.Message}");
-
-                return false; // Hoặc ném lại ngoại lệ nếu cần
+                return false;
             }
         }
 

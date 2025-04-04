@@ -1,11 +1,13 @@
 ﻿using Core.Request;
 using Core.Services.Interfaces;
 using Infrastructure.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 namespace HocViec.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HoaDonController : Controller
     {
         private readonly IHoaDonService _hoaDonService;

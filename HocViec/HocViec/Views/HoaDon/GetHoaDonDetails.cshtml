@@ -19,7 +19,7 @@
                 <div class="col-md-4">
                     <p><strong>Mã hóa đơn: @Model.MaHD</strong></p>
                     <p><strong>Ngày tạo:</strong> @Model.CreatedDate.ToString("dd/MM/yyyy")</p>
-                    <p><strong>Khách hàng:</strong> @Model.TenKhachHang</p>
+                    <p><strong>Khách hàng:</strong> @(Model.UserId == null ? "Khách lẻ" : Model.TenKhachHang)</p>
                     <p><strong>Thanh toán:</strong> @(Model.PhuongThucThanhToan == 0 ? "VNPay" : "Tiền mặt")</p>
                 </div>
                 <div class="col-md-4">
@@ -46,7 +46,7 @@
                             }
                         </strong>
                     </span>
-                    <p><strong>Ngày thanh toán:</strong> @Model.UpdatedDate.ToString("dd/MM/yyyy")</p>
+                 <p><strong>Ngày thanh toán:</strong> @(Model.UpdatedDate.HasValue ? Model.UpdatedDate.Value.ToString("dd/MM/yyyy") : "NaN")</p>
                     <p><strong>Kênh bán:</strong> Website</p>
                 </div>
                 <div class="col-md-4">
@@ -101,7 +101,9 @@
                             </tr>
                             <tr>
                                 <td class="font-weight-bold"><strong>Khách đã đưa:</strong></td>
-                                <td class="text-right">@(Model.ChiTietSanPhams.Sum(ct => ct.ThanhTien).ToString("N0"))</td>
+                                <td class="text-right">
+                                    @(Model.UpdatedDate == null ? "Chưa thanh toán" : Model.ChiTietSanPhams.Sum(ct => ct.ThanhTien).ToString("N0"))
+                                </td>
                             </tr>
                         </tbody>
                     </table>

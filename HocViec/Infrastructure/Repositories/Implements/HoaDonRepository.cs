@@ -58,10 +58,10 @@ namespace Infrastructure.Repositories.Implements
             var query = _context.HoaDons.AsQueryable();
 
             if (startDate.HasValue)
-                query = query.Where(x => x.CreatedDate >= startDate.Value);
+                query = query.Where(x => x.CreatedDate.Date >= startDate.Value.Date);
 
             if (endDate.HasValue)
-                query = query.Where(x => x.CreatedDate <= endDate.Value);
+                query = query.Where(x => x.CreatedDate.Date <= endDate.Value.Date);
 
             if (trangThai.HasValue)
                 query = query.Where(x => x.TrangThai == trangThai.Value);

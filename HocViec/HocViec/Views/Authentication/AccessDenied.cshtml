@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Truy cập bị từ chối";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card p-4 shadow">
+                <i class="fas fa-exclamation-triangle text-danger fa-4x mb-4"></i>
+                <h2 class="mb-4 text-danger">Truy cập bị từ chối</h2>
+                <p class="lead">Bạn không có quyền truy cập vào trang này.</p>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-primary btn-lg mt-4">Quay về trang chủ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
