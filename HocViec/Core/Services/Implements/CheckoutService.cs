@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Request;
+using Core.Response;
 using Core.Services.Interfaces;
 using Infrastructure.Models;
 using Infrastructure.Repositories.Implements;
@@ -22,7 +23,7 @@ namespace Core.Services.Implements
             _cartService = cartService;
         }
 
-        public async Task<GioHangDto> GetSanPhamsByIdsAsync(List<CheckOutDetailsDto> requests)
+        public async Task<GioHangDto> GetSanPhamsByIdsAsync(List<CheckOutDetailsResponse> requests)
         {
             var gioHang = new GioHangDto();
 
@@ -35,7 +36,7 @@ namespace Core.Services.Implements
                     {
                         return null;
                     }
-                    var chiTiet = new CheckOutDetailsDto
+                    var chiTiet = new CheckOutDetailsResponse
                     {
                         SanPhamId = sanPham.Id,
                         TenSanPham = sanPham.Ten,

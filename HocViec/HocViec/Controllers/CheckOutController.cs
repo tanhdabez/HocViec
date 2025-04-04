@@ -1,4 +1,5 @@
 ﻿using Core.Request;
+using Core.Response;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
@@ -17,10 +18,10 @@ namespace YourNamespace.Controllers
         // Hiển thị form nhập thông tin thanh toán
         public async Task<IActionResult> CheckOut(string requests)
         {
-            List<CheckOutDetailsDto> requestList;
+            List<CheckOutDetailsResponse> requestList;
             try
             {
-                requestList = JsonSerializer.Deserialize<List<CheckOutDetailsDto>>(requests);
+                requestList = JsonSerializer.Deserialize<List<CheckOutDetailsResponse>>(requests);
             }
             catch (JsonException)
             {

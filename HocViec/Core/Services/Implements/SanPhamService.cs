@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Request;
+using Core.Response;
 using Core.Services.Interfaces;
 using Infrastructure.Models;
 using Infrastructure.Repositories.Interfaces;

@@ -1,4 +1,5 @@
 ﻿using Core.Request;
+using Core.Response;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,10 @@ namespace Core.Services.Interfaces
         List<CartItemRequest> GetCartFromCookie();
         public void SetCartToCookie(List<CartItemRequest> cartItems);
         Task<List<CartItemRequest>> GetCart(Guid? userId = null);
-        Task<CartResult> AddToCart(Guid productId, int quantity);
+        Task<CartItemResponse> AddToCart(Guid productId, int quantity);
         Task<int> GetTotalItems();
-        Task<CartResult> UpdateCartItem(Guid productId, int quantity);
-        Task<CartResult> RemoveFromCart(Guid productId);
-        Task<CartResult> ClearCart();
+        Task<CartItemResponse> UpdateCartItem(Guid productId, int quantity);
+        Task<CartItemResponse> RemoveFromCart(Guid productId);
+        Task<CartItemResponse> ClearCart();
     }
 }

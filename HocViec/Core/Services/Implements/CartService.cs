@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Request;
+using Core.Response;
 using Core.Services.Interfaces;
 using Infrastructure;
 using Infrastructure.Repositories.Interfaces;
@@ -95,7 +96,7 @@ namespace Core.Services.Implements
             return uniqueProductIds.Count;
         }
 
-        public async Task<CartResult> AddToCart(Guid productId, int quantity)
+        public async Task<CartItemResponse> AddToCart(Guid productId, int quantity)
         {
             var userIdString = _httpContextAccessor.HttpContext?.Session.GetString("UserId");
 
@@ -157,7 +158,7 @@ namespace Core.Services.Implements
             return new() { Success = true, Message = "Thêm vào giỏ hàng thành công.", CartItemCount = cart.CartItems?.Sum(ci => ci.SoLuong) ?? 0 };
         }
 
-        public async Task<CartResult> UpdateCartItem(Guid productId, int quantity)
+        public async Task<CartItemResponse> UpdateCartItem(Guid productId, int quantity)
         {
             var userIdString = _httpContextAccessor.HttpContext?.Session.GetString("UserId");
             if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
@@ -190,7 +191,7 @@ namespace Core.Services.Implements
             return new() { Success = true, Message = "Cập nhật giỏ hàng thành công.", CartItemCount = cart.CartItems.Sum(ci => ci.SoLuong) };
         }
 
-        public async Task<CartResult> RemoveFromCart(Guid productId)
+        public async Task<CartItemResponse> RemoveFromCart(Guid productId)
         {
             var userIdString = _httpContextAccessor.HttpContext?.Session.GetString("UserId");
             if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
@@ -216,7 +217,7 @@ namespace Core.Services.Implements
             };
         }
 
-        public async Task<CartResult> ClearCart()
+        public async Task<CartItemResponse> ClearCart()
         {
             var userIdString = _httpContextAccessor.HttpContext?.Session.GetString("UserId");
             if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
@@ -229,11 +230,11 @@ namespace Core.Services.Implements
             // Xử lý giỏ hàng cho người dùng đã đăng nhập
             var cart = await _cartRepo.GetCartByUserIdAsync(userId);
             if (cart == null || cart.CartItems == null || !cart.CartItems.Any())
-                return new CartResult { Success = false, Message = "Giỏ hàng trống hoặc không tồn tại." };
+                return new CartItemResponse { Success = false, Message = "Giỏ hàng trống hoặc không tồn tại." };
 
             await _cartRepo.ClearCartAsync(cart.Id);
 
-            return new CartResult { Success = true, Message = "Xóa giỏ hàng thành công.", CartItemCount = 0 };
+            return new CartItemResponse { Success = true, Message = "Xóa giỏ hàng thành công.", CartItemCount = 0 };
         }
     }
 }

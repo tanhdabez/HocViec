@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Request;
+using Core.Response;
 using Core.Services.Interfaces;
 using Infrastructure.Models;
 using Infrastructure.Repositories.Interfaces;
@@ -18,7 +19,7 @@ namespace Core.Services.Implements
             _mapper = mapper;
             _sanPhamRepository = sanPhamRepository;
         }
-        public async Task<PaginationResponse<HoaDonResponse>> GetAllHoaDonAsync(FilterRequest filter)
+        public async Task<PaginationRequest<HoaDonResponse>> GetAllHoaDonAsync(FilterRequest filter)
         {
             if (filter.StartDate == null || filter.EndDate == null)
             {
@@ -31,7 +32,7 @@ namespace Core.Services.Implements
             var data = await hoaDons.Skip((filter.PageNumber - 1) * filter.PageSize).Take(filter.PageSize).ToListAsync();
             var mappedData = _mapper.Map<List<HoaDonResponse>>(data);
 
-            return new PaginationResponse<HoaDonResponse>
+            return new PaginationRequest<HoaDonResponse>
             {
                 Data = mappedData,
                 TotalItems = totalItems,

@@ -1,6 +1,6 @@
 ﻿namespace Core.Request
 {
-    public class PaginationResponse<T>
+    public class PaginationRequest<T>
     {
         public List<T> Data { get; set; }
         public int TotalItems { get; set; }
