@@ -5,7 +5,7 @@ namespace Core.Services.Interfaces
 {
     public interface ISanPhamService
     {
-        Task<List<SanPhamResponse>> GetAllSanPham_Home();
+        Task<List<SanPhamResponse>> GetAllSanPham_Home(Guid? loaiHang);
         Task<List<SanPhamResponse>> GetAllSanPham();
         Task<SanPhamResponse> GetSanPhamById(Guid id);
 

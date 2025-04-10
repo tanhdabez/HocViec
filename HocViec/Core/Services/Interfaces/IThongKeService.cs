@@ -1,10 +1,10 @@
-﻿namespace Core.Services.Interfaces
+﻿using Core.Response;
+
+namespace Core.Services.Interfaces
 {
     public interface IThongKeService
     {
-        Task<int> GetSoLuongHangHoaBanAsync(DateTime startDate, DateTime endDate);
-        Task<int> GetSoLuongHangHoaConLaiAsync();
-        Task<int> GetSoLuongHoaDonBanAsync(DateTime startDate, DateTime endDate);
+        Task<ThongKeResponse> GetThongKeAsync(DateTime startDate, DateTime endDate);
     }
 
 }

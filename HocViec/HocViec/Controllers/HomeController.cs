@@ -11,14 +11,16 @@ namespace HocViec.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ISanPhamService _sanPhamService;
         private readonly IUserService _userService;
+        private readonly IDanhMucLoaiHangService _loaiSanPham;
 
-        public HomeController(ILogger<HomeController> logger, ISanPhamService sanPhamService, IUserService userService)
+        public HomeController(ILogger<HomeController> logger, ISanPhamService sanPhamService, IUserService userService, IDanhMucLoaiHangService loaiSanPham)
         {
             _logger = logger;
             _sanPhamService = sanPhamService;
             _userService = userService;
+            _loaiSanPham = loaiSanPham;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(Guid? loaiHang)
         {
             // Kiểm tra session
             if (HttpContext.Session.GetString("Name") != null)
@@ -26,15 +28,15 @@ namespace HocViec.Controllers
                 // Người dùng đã đăng nhập
                 ViewBag.Name = HttpContext.Session.GetString("Name");
                 ViewBag.Role = HttpContext.Session.GetString("Role");
-                var sanPhams = await _sanPhamService.GetAllSanPham_Home();
-                return View(sanPhams);
+               
             }
-            else
-            {
-                var sanPhams = await _sanPhamService.GetAllSanPham_Home();
-                return View(sanPhams);
-            }
+            var loaiHangs = await _loaiSanPham.GetAllDanhMucLoaiHang();
+            ViewBag.LoaiHangs = loaiHangs;
+            var sanPhams = await _sanPhamService.GetAllSanPham_Home(loaiHang);
+            return View(sanPhams);
+         
         }
+
         [HttpGet("/chi-tiet-san-pham")]
         public async Task<IActionResult> ChiTietSanPham_Home(Guid id)
         {
@@ -62,7 +64,6 @@ namespace HocViec.Controllers
             var chiTietHoaDons = await _userService.GetChiTietHoaDonsByHoaDonIdAsync(id);
             return View(chiTietHoaDons);
         }
-
 
         public IActionResult Privacy()
         {

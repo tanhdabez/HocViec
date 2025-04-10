@@ -33,12 +33,15 @@ namespace HocViec.Controllers
                 return Ok(e.Message);
             }
         }
+
         [HttpGet("/NhaCungCap/{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
             try
             {
                 var data = await _nhaCungCapService.GetNhaCungCapById(id);
+                var monthlySales = await _nhaCungCapService.GetMonthlySalesBySupplierId(id);
+                ViewBag.MonthlySales = monthlySales;
                 return View(data);
             }
             catch (Exception e)
@@ -47,12 +50,14 @@ namespace HocViec.Controllers
                 return Ok(e.Message);
             }
         }
+
         [HttpGet("NhaCungCap/Create")]
         public IActionResult Create()
         {
 
             return View();
         }
+
         [HttpPost("NhaCungCap/Create")]
         public async Task<IActionResult> Create(CreateNhaCungCapRequest request)
         {
@@ -79,6 +84,7 @@ namespace HocViec.Controllers
                 return View(request);
             }
         }
+
         [HttpGet("NhaCungCap/Update")]
         public async Task<IActionResult> Update(Guid id)
         {
@@ -93,6 +99,7 @@ namespace HocViec.Controllers
                 return Ok(e.Message);
             }
         }
+
         [HttpPost("NhaCungCap/Update")]
         public async Task<IActionResult> Update(NhaCungCapResponse request)
         {
@@ -112,6 +119,7 @@ namespace HocViec.Controllers
                 return View(request);
             }
         }
+
         [HttpGet("NhaCungCap/Remove")]
         public async Task<IActionResult> UpdateStatus(Guid id)
         {

@@ -6,42 +6,77 @@
 
 <link rel="stylesheet" href="~/css/Home.css" asp-append-version="true" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
 <div class="container mt-4">
     <div class="row">
-        @foreach (var sanPham in Model)
-        {
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card product-card shadow-sm">
-                    <div class="product-image-container">
-                        @if (sanPham.AnhSanPhams != null && sanPham.AnhSanPhams.Any())
+        <div class="col-md-3">
+            <div class="filter-section mb-4">
+                <h5>Loại Hàng</h5>
+                <div class="list-group">
+                    <a asp-action="Index" asp-route-loaiHang="" class="list-group-item list-group-item-action @(string.IsNullOrEmpty(Context.Request.Query["loaiHang"]) ? "active" : "")">Tất cả</a>
+                    @if (ViewBag.LoaiHangs != null)
+                    {
+                        @foreach (var loaiHangItem in ViewBag.LoaiHangs)
                         {
-                            var firstImage = sanPham.AnhSanPhams.First();
-                            <img src="@firstImage" alt="@sanPham.Ten" class="product-image" />
+                            <a asp-action="Index" asp-route-loaiHang="@loaiHangItem.Id" class="list-group-item list-group-item-action @(Context.Request.Query["loaiHang"] == loaiHangItem.Id.ToString() ? "active" : "")">@loaiHangItem.Ten</a>
                         }
-                        else
-                        {
-                            <div style="height: 240px; background-color: #f0f0f0;"></div>
-                        }
-                    </div>
-                    <div class="card-body product-details">
-                        <h5 class="product-title text-truncate">
-                            <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id">
-                                @sanPham.Ten
-                            </a>
-                        </h5>
-                        <p class="product-price text-danger fw-bold">Giá: @sanPham.GiaBan.ToString("N0") VNĐ</p>
-                        <div class="d-flex justify-content-between">
-                            <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
-                            <button class="btn btn-success btn-sm add-to-cart" data-product-id="@sanPham.Id">Thêm vào giỏ</button>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
-        }
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var sanPham in Model)
+                    {
+                        <div class="col-sm-6 col-md-4 mb-4">
+                            <div class="card product-card shadow-sm h-100">
+                                <div class="product-image-container">
+                                    @if (sanPham.AnhSanPhams != null && sanPham.AnhSanPhams.Any())
+                                    {
+                                        var firstImage = sanPham.AnhSanPhams.First();
+                                        <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id">
+                                            <img src="@firstImage" alt="@sanPham.Ten" class="product-image" />
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <div class="product-image-container">
+                                            <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id">
+                                                <div style="height: 220px; background-color: #f0f0f0;"></div>
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="card-body product-details d-flex flex-column">
+                                    <h5 class="product-title text-truncate">
+                                        <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id">
+                                            @sanPham.Ten
+                                        </a>
+                                    </h5>
+                                    <p class="product-price text-danger fw-bold mt-auto">Giá: @sanPham.GiaBan.ToString("N0") VNĐ</p>
+                                    <div class="d-flex justify-content-between mt-2">
+                                        <a asp-controller="Home" asp-action="ChiTietSanPham_Home" asp-route-id="@sanPham.Id" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                                        <button class="btn btn-success btn-sm add-to-cart" data-product-id="@sanPham.Id">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <p class="text-muted">Không có sản phẩm nào phù hợp với lựa chọn này.</p>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="~/js/Home.js" asp-append-version="true"></script>

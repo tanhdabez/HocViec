@@ -19,9 +19,9 @@ namespace Core.Services.Implements
             _sanPhamRepo = sanPhamRepo;
         }
 
-        public async Task<List<SanPhamResponse>> GetAllSanPham_Home()
+        public async Task<List<SanPhamResponse>> GetAllSanPham_Home(Guid? loaiHang)
         {
-            var sanPhams = await _sanPhamRepo.GetAllAsync();
+            var sanPhams = await _sanPhamRepo.GetAllWithLoaiHang(loaiHang);
 
             return _mapper.Map<List<SanPhamResponse>>(sanPhams);
         }

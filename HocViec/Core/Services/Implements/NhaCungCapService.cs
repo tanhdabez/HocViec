@@ -37,6 +37,11 @@ namespace Core.Services.Implements
             return _mapper.Map<NhaCungCapResponse>(NhaCungCap);
         }
 
+        public async Task<Dictionary<int, int>> GetMonthlySalesBySupplierId(Guid id)
+        {
+            return await _nhaCungCapRepo.GetMonthlySalesBySupplierIdAsync(id);
+        }
+
         public async Task<bool> AddNhaCungCap(CreateNhaCungCapRequest request)
         {
             var newNhaCungCap = _mapper.Map<NhaCungCap>(request);

@@ -15,6 +15,23 @@ namespace Infrastructure.Repositories.Implements
         {
             return await _dbContext.NhaCungCaps.ToListAsync();
         }
+        public async Task<Dictionary<int, int>> GetMonthlySalesBySupplierIdAsync(Guid id)
+        {
+            var salesData = await _dbContext.ChiTietHoaDons
+                .Where(cthd => cthd.SanPham.NhaCungCapId == id && cthd.HoaDon.TrangThai == 3)
+                .Select(cthd => new
+                {
+                    Month = cthd.HoaDon.CreatedDate.Month,
+                    Quantity = cthd.SoLuong
+                })
+                .ToListAsync();
+
+            var monthlySales = salesData
+                .GroupBy(sale => sale.Month)
+                .ToDictionary(group => group.Key, group => group.Sum(s => s.Quantity));
+
+            return monthlySales;
+        }
 
         public async Task<NhaCungCap> GetByIdAsync(Guid id)
         {

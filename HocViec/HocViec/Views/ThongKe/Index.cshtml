@@ -1,21 +1,28 @@
-﻿@model Core.Request.ThongKeRequest
+﻿@model Core.Response.ThongKeResponse
 
 @{
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<!-- Flatpickr CSS + JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 
 <div class="container">
-    <h2 class="mt-4">Thống Kê</h2>
+    <h1 class="fw-bold text-primary text-center">Thống Kê</h1>
 
     <div class="row">
         <div class="col-md-4">
-            <label for="startDate">Từ ngày</label>
-            <input type="date" id="startDate" name="startDate" class="form-control" value="@Model.StartDate.ToString("yyyy-MM-dd")" />
+            <label for="startDateDisplay">Từ ngày</label>
+            <input type="text" id="startDateDisplay" class="form-control" placeholder="Chọn ngày" />
+            <input type="hidden" id="startDate" name="startDate" value="@Model.StartDate.ToString("yyyy-MM-dd")" />
         </div>
+
         <div class="col-md-4">
-            <label for="endDate">Đến ngày</label>
-            <input type="date" id="endDate" name="endDate" class="form-control" value="@Model.EndDate.ToString("yyyy-MM-dd")" />
+            <label for="endDateDisplay">Đến ngày</label>
+            <input type="text" id="endDateDisplay" class="form-control" placeholder="Chọn ngày" />
+            <input type="hidden" id="endDate" name="endDate" value="@Model.EndDate.ToString("yyyy-MM-dd")" />
         </div>
+
         <div class="col-md-4 d-flex align-items-end">
             <button id="filterButton" class="btn btn-primary mt-2">Lọc</button>
         </div>
@@ -55,14 +62,15 @@
     <!-- Phần biểu đồ -->
     <div class="row mt-4">
         <div class="col-md-8">
-            <canvas id="chartDoanhThu"></canvas>
+            <canvas id="chartTopNhaCungCap"></canvas>
         </div>
-        <div class="col-md-6">
-            <canvas id="chartTrangThaiHoaDon"></canvas>
-        </div>
+     @*    <div class="col-md-6">
+            <canvas id="chartTopNhaCungCap"></canvas>
+        </div> *@
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/vn.js"></script>
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -75,42 +83,72 @@
                 window.location.href = url;
             });
 
-            // Vẽ biểu đồ demo
-            let ctxDoanhThu = document.getElementById('chartDoanhThu').getContext('2d');
-            let chartDoanhThu = new Chart(ctxDoanhThu, {
+            // Biểu đồ Top Nhà Cung Cấp
+            let ctxTopNhaCungCap = document.getElementById('chartTopNhaCungCap').getContext('2d');
+
+            let labels = @Html.Raw(Json.Serialize(Model.TopNhaCungCap));
+            let data = @Html.Raw(Json.Serialize(Model.TopSoLuong));
+
+            let chartTopNhaCungCap = new Chart(ctxTopNhaCungCap, {
                 type: 'bar',
                 data: {
-                    labels: ['Hàng bán', 'Hàng còn lại', 'Hoá đơn'],
+                    labels: labels,
                     datasets: [{
-                        label: 'Số lượng',
-                        data: [@Model.SoLuongHangBan, @Model.SoLuongHangConLai, @Model.SoLuongHoaDon],
-                        backgroundColor: ['#f56954', '#00a65a', '#f39c12']
+                        label: 'Số lượng bán ra',
+                        data: data,
+                        backgroundColor: '#007bff'
                     }]
                 },
                 options: {
                     responsive: true,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Số lượng'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Nhà cung cấp'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        tooltip: {
+                            enabled: true
                         }
                     }
                 }
             });
-
-            let ctxTrangThai = document.getElementById('chartTrangThaiHoaDon').getContext('2d');
-            let chartTrangThai = new Chart(ctxTrangThai, {
-                type: 'pie',
-                data: {
-                    labels: ['Thành công', 'Hoàn trả', 'Đang giao'],
-                    datasets: [{
-                        data: [12, 3, 5], // Giả sử demo
-                        backgroundColor: ['#00a65a', '#f56954', '#f39c12']
-                    }]
-                },
-                options: {
-                    responsive: true
-                }
-            });
         });
+          flatpickr("#startDateDisplay", {
+            altInput: true,
+            altFormat: "d/m/Y",
+            dateFormat: "Y-m-d",
+            locale: "vn",
+            defaultDate: "@Model.StartDate.ToString("yyyy-MM-dd")",
+            onChange: function(selectedDates, dateStr, instance) {
+                document.getElementById("startDate").value = dateStr;
+            }
+        });
+
+        flatpickr("#endDateDisplay", {
+            altInput: true,
+            altFormat: "d/m/Y",
+            dateFormat: "Y-m-d",
+            locale: "vn",
+            defaultDate: "@Model.EndDate.ToString("yyyy-MM-dd")",
+            onChange: function(selectedDates, dateStr, instance) {
+                document.getElementById("endDate").value = dateStr;
+            }
+        });
+
     </script>
 }

@@ -1,13 +1,17 @@
-﻿
-body {
+﻿body {
     background-color: #f8f9fa;
 }
 
 .product-card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
+
 
     .product-card:hover {
         transform: translateY(-5px);
@@ -22,8 +26,10 @@ body {
 }
 
     .product-image:hover {
-        transform: scale(1.1);
+        transform: scale(1.05) rotate(-1deg);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
+
 
 .product-title a {
     text-decoration: none;
@@ -37,6 +43,14 @@ body {
 
 .product-price {
     font-size: 16px;
+    margin-bottom: 10px; /* Thêm margin dưới giá */
+}
+
+.product-details {
+    padding: 15px;
+    display: flex; /* Sử dụng flexbox cho phần chi tiết */
+    flex-direction: column; /* Các phần tử bên trong xếp theo chiều dọc */
+    flex-grow: 1; /* Cho phép phần chi tiết chiếm không gian còn lại */
 }
 
 .add-to-cart {
@@ -49,3 +63,44 @@ body {
     .add-to-cart:hover {
         background-color: #218838;
     }
+
+/* Style cho phần bộ lọc bên trái */
+.filter-section h5 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+    .list-group-item.active:hover {
+        background-color: #007bff !important; /* Giữ nguyên màu nền xanh */
+        border-color: #007bff !important;
+        color: white !important; /* Giữ nguyên màu chữ trắng */
+        cursor: default; /* Thay đổi con trỏ chuột (tùy chọn) */
+    }
+
+.list-group-item-action:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+/* Điều chỉnh layout sản phẩm để vừa với cột bên phải */
+.col-md-9 .row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.col-md-9 .col-sm-6,
+.col-md-9 .col-md-4 {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các sản phẩm */
+}
+
+.product-details .d-flex.justify-content-between {
+    margin-top: auto; /* Đẩy các nút xuống cuối phần chi tiết */
+}

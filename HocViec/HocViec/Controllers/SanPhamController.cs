@@ -118,7 +118,6 @@ namespace HocViec.Controllers
                 return View(request);
             }
         }
-
       
         [HttpGet("SanPham/Remove")]
         public async Task<IActionResult> UpdateStatus(Guid id)

@@ -8,10 +8,25 @@ namespace Infrastructure.Repositories.Implements
     public class SanPhamRepository : ISanPhamRepository
     {
         private readonly AppDbContext _dbContext; private readonly ILogger<SanPhamRepository> _logger;
-        public SanPhamRepository(AppDbContext dbContext, ILogger<SanPhamRepository> logger) // Thêm ILogger vào constructor
+        public SanPhamRepository(AppDbContext dbContext, ILogger<SanPhamRepository> logger)
         {
             _dbContext = dbContext;
             _logger = logger;
+        }
+        public async Task<List<SanPham>> GetAllWithLoaiHang(Guid? loaiHang)
+        {
+            var query = _dbContext.SanPhams
+               .Include(sp => sp.NhaCungCap)
+               .Include(sp => sp.DanhMucLoaiHang)
+               .Include(sp => sp.AnhSanPhams)
+               .Where(sp => sp.TrangThai == true);
+
+            if (loaiHang.HasValue)
+            {
+                query = query.Where(sp => sp.DanhMucSanPhamId == loaiHang.Value);
+            }
+
+            return await query.ToListAsync();
         }
         public async Task<List<SanPham>> GetAllAsync()
         {

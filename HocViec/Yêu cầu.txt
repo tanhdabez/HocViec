@@ -1,7 +1,7 @@
 ﻿yêu cầu xây dựng website bán hàng
 1. Quản lý đối tượng sử dụng: 
 	Admin (thiết lập danh mục: phân loại hàng hoá, nhà cung cấp, ....) 
-	Nhân viên (Tạo lập hoá đơn bán hàng) 
+	Nhân viên (Tạo lập hoá đơn bán hàng)
 	Khách hàng đăng ký tài khoản (Tạo yêu cầu mua hàng nếu chưa thanh toán có thể lưu mặt hàng lại để khi thanh toán có thể lấy hàng)
 	Khách hàng vãng lai (Tạo yêu cầu mua hàng chỉ kiểm tra số lượng mặt hàng đang có trên hệ thống)
 2. Quản lý danh sách nhà cung cấp

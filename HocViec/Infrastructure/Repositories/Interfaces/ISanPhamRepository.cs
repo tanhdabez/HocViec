@@ -10,6 +10,7 @@ namespace Infrastructure.Repositories.Interfaces
     public interface ISanPhamRepository
     {
         Task<List<SanPham>> GetAllAsync();
+        Task<List<SanPham>> GetAllWithLoaiHang(Guid? loaiHang);
         Task<List<SanPham>> GetAllSanPhamsWithIncludesAsync();
         Task<SanPham> GetByIdAsync(Guid id);
         Task<SanPham> GetSanPhamWithImagesAsync(Guid sanPhamId);

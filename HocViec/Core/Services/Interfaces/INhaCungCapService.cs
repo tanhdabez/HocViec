@@ -6,6 +6,9 @@ namespace Core.Services.Interfaces
     public interface INhaCungCapService
     {
         Task<List<NhaCungCapResponse>> GetAllNhaCungCap();
+
+        Task<Dictionary<int, int>> GetMonthlySalesBySupplierId(Guid id);
+
         Task<NhaCungCapResponse> GetNhaCungCapById(Guid id);
 
         Task<bool> AddNhaCungCap(CreateNhaCungCapRequest request);
